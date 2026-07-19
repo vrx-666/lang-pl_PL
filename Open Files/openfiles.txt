@@ -20,7 +20,7 @@ Cannot get list of open files=Nie można pobrać listy otwartych plików
 :end
 
 ; Note: December 8, 2024 - 4 missing translations
-Enable Kill Button=
-Kill this Process holding files open=
-Open=
-May prevent shutdown=
+Enable Kill Button=Włącz przycisk zakończenia
+Kill this Process holding files open=Zakończ ten proces trzymający otwarte pliki
+Open=Otwórz
+May prevent shutdown=Może uniemożliwić wyłączenie
