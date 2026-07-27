@@ -131,6 +131,6 @@ These actions apply to all shares:
 :end
 
 ; Note: December 8, 2024 - 3 missing translations
-Enable Empty All Trash Button=
-Enable Empty Share Trash Button=
-Enable Remove Aged Files Button=
+Enable Empty All Trash Button=Włącz przycisk opróżniania całego kosza
+Enable Empty Share Trash Button=Włącz przycisk opróżniania kosza udziału
+Enable Remove Aged Files Button=Włącz przycisk usuwania starych plików

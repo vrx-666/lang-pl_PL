@@ -38,5 +38,5 @@ Enable for Cache and Pool Disks=Włącz dla dysków cache i puli
 :end
 
 ; Note: December 8, 2024 - 2 missing translations
-Display Events=
-Refresh Page=
+Display Events=Wyświetl zdarzenia
+Refresh Page=Odśwież stronę

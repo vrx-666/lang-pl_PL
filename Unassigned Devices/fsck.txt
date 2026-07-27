@@ -1,13 +1,13 @@
 
 
 ; Note: April 21, 2025 - 10 missing translations
-Cannot determine file system on an encrypted disk=
-Dirty log detected=
-Executing file system check=
-Executing file system scrub=
-File system corruption detected=
-File system corruption fixed=
-Force Log Zeroing=
-No file system corruption detected=
-Note: While there is some risk, if it is not possible to first mount the filesystem to clear the log, zeroing it is the only option to try and repair the filesystem, and in most cases it results in little or no data loss=
-Run with Correct flag=
+Cannot determine file system on an encrypted disk=Nie można określić systemu plików na zaszyfrowanym dysku
+Dirty log detected=Wykryto niezapisany log (dirty log)
+Executing file system check=Wykonywanie sprawdzania systemu plików
+Executing file system scrub=Wykonywanie czyszczenia systemu plików (scrub)
+File system corruption detected=Wykryto uszkodzenie systemu plików
+File system corruption fixed=Naprawiono uszkodzenie systemu plików
+Force Log Zeroing=Wymuś zerowanie logu
+No file system corruption detected=Nie wykryto uszkodzeń systemu plików
+Note: While there is some risk, if it is not possible to first mount the filesystem to clear the log, zeroing it is the only option to try and repair the filesystem, and in most cases it results in little or no data loss=Uwaga: istnieje pewne ryzyko, ale jeśli nie da się najpierw zamontować systemu plików, aby wyczyścić log, wyzerowanie go jest jedyną opcją naprawy systemu plików — w większości przypadków oznacza to niewielką utratę danych lub jej brak
+Run with Correct flag=Uruchom z flagą naprawy (Correct)
