@@ -205,25 +205,25 @@ Należy wybrać lokalny plik klucza z zapisanym kluczem szyfrowania albo plik bi
 :end
 
 :info_warning_temp_help:
-*Warning disk temperature* sets the warning threshold for this hard disk temperature. Exceeding this threshold will result in a warning notification.
+*Temperatura ostrzegawcza dysku* ustawia próg ostrzeżenia dla temperatury tego dysku twardego. Przekroczenie tego progu skutkuje powiadomieniem ostrzegawczym.
 
-A value of zero will disable the warning threshold (including notifications).
+Wartość zero wyłącza próg ostrzegawczy (wraz z powiadomieniami).
 :end
 
 :info_critical_temp_help:
-*Critical disk temperature* sets the critical threshold for this hard disk temperature. Exceeding this threshold will result in an alert notification.
+*Krytyczna temperatura dysku* ustawia próg krytyczny dla temperatury tego dysku twardego. Przekroczenie tego progu skutkuje powiadomieniem alarmowym.
 
-A value of zero will disable the critical threshold (including notifications).
+Wartość zero wyłącza próg krytyczny (wraz z powiadomieniami).
 :end
 
 :info_file_system_help:
-Enter the desired file system type.  Changing the file system type of a device will permit you to reformat
-that device using the new file system.  Be aware that **all existing data on the device will be lost**.
+Należy podać żądany typ systemu plików.  Zmiana typu systemu plików urządzenia pozwoli ponownie sformatować
+to urządzenie w nowym systemie plików.  Uwaga: **wszystkie dane znajdujące się na urządzeniu zostaną utracone**.
 :end
 
 :info_comments_help:
-This text will appear under the *Comments* column for the share in Windows Explorer.
-Enter anything you like, up to 256 characters.
+Ten tekst pojawi się w kolumnie *Komentarze* przy udziale w Eksploratorze Windows.
+Można wpisać dowolną treść, do 256 znaków.
 :end
 
 :info_warning_utilization_help:
@@ -235,9 +235,9 @@ A value of zero will disable the warning threshold (including notifications).
 :end
 
 :info_critical_utilization_help:
-*Critical disk utilization* sets the critical threshold for this hard disk utilization. Exceeding this threshold will result in an alert notification.
+*Krytyczne wykorzystanie dysku* ustawia próg krytyczny dla wykorzystania tego dysku twardego. Przekroczenie tego progu skutkuje powiadomieniem alarmowym.
 
-A value of zero will disable the critical threshold (including notifications).
+Wartość zero wyłącza próg krytyczny (wraz z powiadomieniami).
 :end
 
 :info_btrfs_balance_help:
@@ -260,18 +260,18 @@ For more complete documentation, please refer to the btrfs-balance [Manpage](htt
 :end
 
 :info_balance_cancel_help:
-**Cancel** will cancel the balance operation in progress.
+**Anuluj** przerywa trwającą operację balansowania.
 :end
 
 :info_btrfs_scrub_help:
-**Scrub** runs the *btrfs scrub* program which will read all data and metadata blocks from all
-devices and verify checksums.
+**Oczyszczanie** uruchamia program *btrfs scrub*, który odczytuje wszystkie bloki danych i metadanych ze wszystkich
+urządzeń i weryfikuje sumy kontrolne.
 
-If *Repair corrupted blocks* is checked, *btrfs scrub* will repair corrupted blocks if there’s a correct copy available.
+Gdy zaznaczono *Napraw uszkodzone bloki*, *btrfs scrub* naprawi uszkodzone bloki, o ile dostępna jest poprawna kopia.
 :end
 
 :info_scrub_cancel_help:
-**Cancel** will cancel the Scrub operation in progress.
+**Anuluj** przerywa trwającą operację Oczyszczania.
 :end
 
 :info_btrfs_check_help:
@@ -287,7 +287,7 @@ increasing for the device on the Main page.
 :end
 
 :info_check_cancel_help:
-**Cancel** will cancel the Check operation in progress.
+**Anuluj** przerywa trwającą operację Sprawdzania.
 :end
 
 :info_reiserfs_check_help:
@@ -304,7 +304,7 @@ increasing for the device on the Main page.
 :end
 
 :info_reiserfs_cancel_help:
-**Cancel** will cancel the Check operation in progress.
+**Anuluj** przerywa trwającą operację Sprawdzania.
 :end
 
 :info_xfs_check_help:
@@ -320,26 +320,26 @@ increasing for the device on the Main page.
 :end
 
 :info_xfs_cancel_help:
-**Cancel** will cancel the Check operation in progress.
+**Anuluj** przerywa trwającą operację Sprawdzania.
 :end
 
 :info_smart_notifications_help:
-SMART notifications are generated on either an increasing RAW value of the attribute, or a decreasing NORMALIZED value which reaches a predefined threshold set by the manufacturer.
+Powiadomienia SMART są generowane przy rosnącej wartości RAW atrybutu albo przy malejącej wartości NORMALIZED, która osiąga zdefiniowany wcześniej próg ustalony przez producenta.
 
-Each disk may have its own specific setting overruling the 'default' setting (see global SMART settings under Disk Settings).
+Każdy dysk może mieć własne ustawienie nadrzędne wobec ustawienia „domyślnego” (patrz globalne ustawienia SMART w Ustawieniach Dysku).
 :end
 
 :info_tolerance_level_help:
-A tolerance level may be given to prevent that small changes result in a notification. Setting a too high tolerance level may result in critical changes without a notification.
+Można podać poziom tolerancji, aby drobne zmiany nie skutkowały powiadomieniem. Ustawienie zbyt wysokiego poziomu tolerancji może sprawić, że zmiany krytyczne przejdą bez powiadomienia.
 
-Each disk may have its own specific setting overruling the 'default' setting (see global SMART settings under Disk Settings).
+Każdy dysk może mieć własne ustawienie nadrzędne wobec ustawienia „domyślnego” (patrz globalne ustawienia SMART w Ustawieniach Dysku).
 :end
 
 :info_controller_type_help:
-By default automatic controller selection is done by smartctl to read the SMART information. Certain controllers however need specific settings for smartctl to work.
-Use this setting to select your controller type and fill-in the specific disk index and device name for your situation. Use the manufacturer's documentation to find the relevant information.
+Domyślnie smartctl dobiera kontroler automatycznie, aby odczytać informacje SMART. Niektóre kontrolery wymagają jednak określonych ustawień, żeby smartctl działał.
+To ustawienie służy do wybrania typu kontrolera oraz podania właściwego indeksu dysku i nazwy urządzenia dla danej sytuacji. Potrzebne informacje znajdują się w dokumentacji producenta.
 
-Each disk may have its own specific setting overruling the 'default' setting (see global SMART settings under Disk Settings).
+Każdy dysk może mieć własne ustawienie nadrzędne wobec ustawienia „domyślnego” (patrz globalne ustawienia SMART w Ustawieniach Dysku).
 :end
 
 :info_attribute_notifications_help:
