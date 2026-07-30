@@ -1,13 +1,13 @@
 :main_array_devices_help:
 **Kolorowy wskaźnik stanu** — znaczenie kolorowego wskaźnika na początku każdego wiersza w *Urządzeniach w macierzy* jest następujące:
 
-<i class='fa fa-circle orb green-orb'></i>Działa nominalnie, urządzenie jest aktywne.
+<i class='fa fa-circle orb green-orb'></i>Działa prawidłowo, urządzenie jest aktywne.
 
 <i class='fa fa-circle orb grey-orb'></i>Urządzenie oczekuje (uśpione).
 
 <i class='fa fa-warning orb yellow-orb'></i>Zawartość urządzenia jest emulowana.
 
-<i class='fa fa-times orb red-orb'></i>Urządzenie wyłączone, zawartość emulowana.
+<i class='fa fa-times orb red-orb'></i>Urządzenie zablokowane, zawartość emulowana.
 
 <i class='fa fa-square orb blue-orb'></i>Nowe urządzenie.
 
@@ -27,6 +27,7 @@ pliki.  Te jednostki ustawia się również na stronie [Ustawienia wyświetlania
 zajętego miejsca będzie różna od zera nawet dla pustego dysku, ze względu na narzut systemu plików.
 
 *Uwaga: dla puli cache złożonej z wielu urządzeń dane te dotyczą całej puli, zgodnie z tym, co zwraca btrfs.*
+
 **Odczyty, Zapisy** to licznik żądań wejścia/wyjścia przekazanych sterownikom urządzenia.  Statystyki te
 można w dowolnym momencie wyzerować — patrz sekcja Status Macierzy poniżej.
 
@@ -68,7 +69,7 @@ Minimalna liczba pozycji macierzy to 2, przy czym do macierzy musi być przypisa
 :cache_devices_help:
 **Kolorowy wskaźnik stanu** — znaczenie kolorowego wskaźnika na początku każdego wiersza w *Urządzeniach w puli* jest następujące:
 
-<i class='fa fa-circle orb green-orb'></i>Działa nominalnie, urządzenie jest aktywne.
+<i class='fa fa-circle orb green-orb'></i>Działa prawidłowo, urządzenie jest aktywne.
 
 <i class='fa fa-circle orb grey-orb'></i>Urządzenie oczekuje (uśpione).
 
