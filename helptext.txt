@@ -1,125 +1,124 @@
 :main_array_devices_help:
-**Colored Status Indicator** the significance of the color indicator at the beginning of each line in *Array Devices* is as follows:
+**Kolorowy wskaźnik stanu** — znaczenie kolorowego wskaźnika na początku każdego wiersza w *Urządzeniach w macierzy* jest następujące:
 
-<i class='fa fa-circle orb green-orb'></i>Normal operation, device is active.
+<i class='fa fa-circle orb green-orb'></i>Działa nominalnie, urządzenie jest aktywne.
 
-<i class='fa fa-circle orb grey-orb'></i>Device is in standby mode (spun-down).
+<i class='fa fa-circle orb grey-orb'></i>Urządzenie oczekuje (uśpione).
 
-<i class='fa fa-warning orb yellow-orb'></i>Device contents emulated.
+<i class='fa fa-warning orb yellow-orb'></i>Zawartość urządzenia jest emulowana.
 
-<i class='fa fa-times orb red-orb'></i>Device is disabled, contents emulated.
+<i class='fa fa-times orb red-orb'></i>Urządzenie wyłączone, zawartość emulowana.
 
-<i class='fa fa-square orb blue-orb'></i>New device.
+<i class='fa fa-square orb blue-orb'></i>Nowe urządzenie.
 
-<i class='fa fa-square orb grey-orb'></i>No device present, position is empty.
+<i class='fa fa-square orb grey-orb'></i>Brak urządzenia, pozycja jest pusta.
 
-**Identification** is the *signature* that uniquely identifies a storage device. The signature
-includes the device model number, serial number, linux device id, and the device size.
+**Identyfikacja** to *sygnatura*, która jednoznacznie identyfikuje urządzenie pamięci masowej. Sygnatura
+obejmuje numer modelu urządzenia, numer seryjny, identyfikator urządzenia w Linuksie oraz jego rozmiar.
 
-**Temp.** (temperature) is read directly from the device. You configure which units to use on
-the [Display Preferences](Settings/DisplaySettings) page.  We do not read the temperature of spun-down hard
-drives since this typically causes them to spin up; instead we display the `*` symbol.  We also
-display the `*` symbol for SSD and Flash devices, though sometimes these devices do report a valid
-temperature, and sometimes they return the value `0`.
+**Temp.** (temperatura) jest odczytywana bezpośrednio z urządzenia. Jednostki wybiera się na stronie
+[Ustawienia wyświetlania](Settings/DisplaySettings).  Temperatura uśpionych dysków twardych nie jest
+odczytywana, ponieważ zwykle powoduje to ich wybudzenie; zamiast niej wyświetlany jest symbol `*`.  Symbol `*`
+wyświetlany jest również przy dyskach SSD i urządzeniach Flash, choć czasem zwracają one prawidłową temperaturę,
+a czasem wartość `0`.
 
-**Size, Used, Free** reports the total device size, used space, and remaining space for files.  These
-units are also configured on the [Display Preferences](Settings/DisplaySettings) page.  The
-amount of space used will be non-zero even for an empty disk due to file system overhead.
+**Rozmiar, Użyte, Wolne** pokazują całkowity rozmiar urządzenia, zajęte miejsce oraz miejsce pozostałe na
+pliki.  Te jednostki ustawia się również na stronie [Ustawienia wyświetlania](Settings/DisplaySettings).  Ilość
+zajętego miejsca będzie różna od zera nawet dla pustego dysku, ze względu na narzut systemu plików.
 
-*Note: for a multi-device cache pool, this data is for the entire pool as returned by btrfs.*
+*Uwaga: dla puli cache złożonej z wielu urządzeń dane te dotyczą całej puli, zgodnie z tym, co zwraca btrfs.*
+**Odczyty, Zapisy** to licznik żądań wejścia/wyjścia przekazanych sterownikom urządzenia.  Statystyki te
+można w dowolnym momencie wyzerować — patrz sekcja Status Macierzy poniżej.
 
-**Reads, Writes** are a count of I/O requests sent to the device I/O drivers.  These statistics may
-be cleared at any time, refer to the Array Status section below.
+**Błędy** zliczają *nieodwracalne* błędy zgłoszone przez sterowniki wejścia/wyjścia
+urządzenia. Dane brakujące z powodu nieodwracalnych błędów odczytu macierzy są uzupełniane w locie na
+podstawie rekonstrukcji z parzystości (podejmowana jest też próba zapisania tych danych do sektorów, które
+zawiodły). Każdy nieodwracalny błąd zapisu skutkuje *wyłączeniem* dysku.
 
-**Errors** counts the number of *unrecoverable* errors reported by the device
-I/O drivers. Missing data due to unrecoverable array read errors is filled in on-the-fly using parity
-reconstruct (and we attempt to write this data back to the sector(s) which failed). Any unrecoverable
-write error results in *disabling* the disk.
+**FS** wskazuje system plików wykryty na partycji 1 urządzenia.
 
-**FS** indicates the file system detected in partition 1 of the device.
+**Widok** — w tej kolumnie ikona katalogu oznacza, że urządzenie jest *zamontowane*. Kliknięcie ikony
+otwiera przeglądanie systemu plików.
 
-**View** column contains a folder icon indicating the device is *mounted*. Click the icon to
-browse the file system.
+Jeśli na stronie [Ustawienia wyświetlania](Settings/DisplaySettings) włączono opcję „Wyświetl sumę
+macierzy", pojawia się wiersz **Suma** z podsumowaniem statystyk urządzeń, w tym średnią temperaturą
+urządzeń.
 
-If "Display array totals" is enable on the [Display Preferences](Settings/DisplaySettings) page, a
-**Total** line is included which provides a tally of the device statistics, including the average temperature
-of your devices.
+Zmiana przypisania urządzeń macierzy wymaga jej zatrzymania.
 
-The Array must be Stopped in order to change Array device assignments.
+Macierz Unraid składa się z jednego lub dwóch dysków parzystości oraz pewnej liczby dysków danych. Dyski
+danych służą wyłącznie do przechowywania danych użytkownika, a dyski parzystości zapewniają nadmiarowość
+niezbędną do odtworzenia danych po awarii dysku.
 
-An Unraid array consists of one or two Parity disks and a number of Data disks. The Data
-disks are exclusively used to store user data, and the Parity disk(s) provides the redundancy necessary
-to recover from disk failures.
+Ponieważ dane nie są rozpraszane w poprzek macierzy, dyski parzystości muszą być tak samo duże lub większe
+niż największy dysk danych.  Dysk parzystości powinien być również najwydajniejszym dyskiem.
 
-Since data is not striped across the array, the Parity disk(s) must be as large, or larger than the largest Data
-disk.  Parity should also be your highest performance drive.
+Każdy dysk danych ma własny system plików i może być eksportowany jako
+oddzielny udział.
 
-Each Data disk has its own file system and can be exported as a
-separate share.
-
-Click on the Device name to configure individual device settings and launch certain utilities.
+Kliknięcie nazwy urządzenia otwiera ustawienia pojedynczego urządzenia i pozwala uruchomić wybrane
+narzędzia.
 :end
 
 :main_slots_help:
-**Slots** select the number of device slots in your server designated for Array devices.
-The minimum number of Array slots is 2, and you must have at least one device assigned to the array.
+**Pozycje** określają liczbę pozycji na urządzenia przeznaczonych w serwerze dla urządzeń macierzy.
+Minimalna liczba pozycji macierzy to 2, przy czym do macierzy musi być przypisane co najmniej jedno urządzenie.
 :end
 
 :cache_devices_help:
-**Colored Status Indicator** the significance of the color indicator at the beginning of each line in *Pool Devices* is as follows:
+**Kolorowy wskaźnik stanu** — znaczenie kolorowego wskaźnika na początku każdego wiersza w *Urządzeniach w puli* jest następujące:
 
-<i class='fa fa-circle orb green-orb'></i>Normal operation, device is active.
+<i class='fa fa-circle orb green-orb'></i>Działa nominalnie, urządzenie jest aktywne.
 
-<i class='fa fa-circle orb grey-orb'></i>Device is in standby mode (spun-down).
+<i class='fa fa-circle orb grey-orb'></i>Urządzenie oczekuje (uśpione).
 
-<i class='fa fa-square orb blue-orb'></i>New device.
+<i class='fa fa-square orb blue-orb'></i>Nowe urządzenie.
 
-<i class='fa fa-square orb grey-orb'></i>No device present, position is empty.
+<i class='fa fa-square orb grey-orb'></i>Brak urządzenia, pozycja jest pusta.
 
-**Pool Devices** is a single device, or pool of multiple devices, *outside* the Unraid array.  It may be exported for network access just
-like an Array device.  Being outside the Unraid array results in significantly faster write access.
+**Urządzenia w puli** to pojedyncze urządzenie lub pula wielu urządzeń *poza* macierzą Unraid.  Można je udostępnić w sieci tak samo
+jak urządzenie macierzy.  Umieszczenie poza macierzą Unraid daje znacznie szybszy zapis.
 
-There are two ways to configure the Pool devices:
+Urządzenia w puli konfiguruje się na dwa sposoby:
 
-1. As a single device, or
-2. As a multi-device pool.
+1. jako pojedyncze urządzenie albo
+2. jako pulę wielu urządzeń.
 
-When configured as a single device you may format the device using any supported file system (btrfs, reiserfs,
-or xfs).  This configuration offers the highest performance, but at the cost of no data protection - if the
-single pool device fails all data contained on it may be lost.
+Przy konfiguracji jako pojedyncze urządzenie można je sformatować dowolnym obsługiwanym systemem plików (btrfs, reiserfs
+lub xfs).  Taka konfiguracja daje najwyższą wydajność, ale kosztem braku ochrony danych — awaria pojedynczego
+urządzenia puli może oznaczać utratę wszystkich zapisanych na nim danych.
 
-When configured as a multi-device pool, Unraid OS will automatically select *btrfs-raid1* format (for both data
-and meta-data).  btrfs permits any number of devices to be added to the pool and each copy of data is guaranteed
-to be written to two different devices.  Hence the pool can withstand a single-disk failure without losing data.
+Przy konfiguracji jako pula wielu urządzeń Unraid OS wybiera automatycznie format *btrfs-raid1* (zarówno dla danych,
+jak i metadanych).  btrfs pozwala dodać do puli dowolną liczbę urządzeń, a każda kopia danych trafia
+na dwa różne urządzenia.  Dzięki temu pula znosi awarię pojedynczego dysku bez utraty danych.
 
-When [User Shares](/Settings/ShareSettings) are enabled, user shares may be configured to
-automatically make use of the Pool device in order to
-speed up writes.  A special background process called the *mover* can be scheduled to run
-periodically to move user share files off the Cache and onto the Array.
+Gdy włączone są [Udziały użytkowników](/Settings/ShareSettings), można je skonfigurować tak, aby
+automatycznie korzystały z urządzenia puli w celu
+przyspieszenia zapisu.  Osobny proces działający w tle, zwany *mover*, można zaplanować tak, aby
+okresowo przenosił pliki udziałów z Cache na macierz.
 :end
 
 :cache_slots_help:
-**Slots** select the number of device slots in your server designated for Cache devices.
+**Pozycje** określają liczbę pozycji na urządzenia przeznaczonych w serwerze dla urządzeń Cache.
 :end
 
 :boot_device_help:
-Vital array configuration is maintained on the USB Flash device; for this reason, it must remain
-plugged in to your server.  Click on [Flash](/Main/Flash?name=flash) to see the GUID and registration
-information, and to configure export settings.  Since the USB Flash device is formatted using FAT file system,
-it may only be exported using SMB protocol.
+Kluczowa konfiguracja macierzy przechowywana jest na urządzeniu USB Flash; z tego powodu musi ono pozostać
+podłączone do serwera.  Kliknięcie [Flash](/Main/Flash?name=flash) pokazuje GUID i informacje
+rejestracyjne oraz pozwala skonfigurować udostępnianie.  Ponieważ urządzenie USB Flash jest sformatowane systemem plików FAT,
+można je udostępnić wyłącznie protokołem SMB.
 :end
 
 :array_status_help:
-**Colored Status Indicator** the significance of the color indicator of the *Array* is as follows:
+**Kolorowy wskaźnik stanu** — znaczenie kolorowego wskaźnika *Macierzy* jest następujące:
 
-<i class='fa fa-circle orb green-orb'></i>Array is Started and Parity is valid.
+<i class='fa fa-circle orb green-orb'></i>Macierz jest uruchomiona, dane parzystości prawidłowe.
 
-<i class='fa fa-circle orb grey-orb'></i>Array is Stopped, Parity is valid.
+<i class='fa fa-circle orb grey-orb'></i>Macierz jest zatrzymana, dane parzystości prawidłowe.
 
-<i class='fa fa-warning orb yellow-orb'></i>Array is Started, but Parity is invalid.
+<i class='fa fa-warning orb yellow-orb'></i>Macierz jest uruchomiona, ale dane parzystości nieprawidłowe.
 
-<i class='fa fa-warning orb grey-orb'></i>Array is Stopped, Parity is invalid.
-
+<i class='fa fa-warning orb grey-orb'></i>Macierz jest zatrzymana, dane parzystości nieprawidłowe.
 :end
 
 :array_devices_help:
