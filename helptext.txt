@@ -840,60 +840,60 @@ Określa odstęp między odpytaniami SMART dysku, w sekundach.  Wartość 0 wył
 :end
 
 :disk_tunable_enable_ncq_help:
-If set to **No** then *Native Command Queuing* is disabled for all array devices that support NCQ.
+Ustawienie **Nie** wyłącza *Native Command Queuing* dla wszystkich urządzeń macierzy obsługujących NCQ.
 
-**Auto** leaves the setting for each device as-is.
+**Auto** pozostawia ustawienie każdego urządzenia bez zmian.
 
-Note: You must reboot after selecting Auto for setting to take effect.
+Uwaga: po wybraniu Auto konieczne jest ponowne uruchomienie, aby ustawienie zaczęło obowiązywać.
 :end
 
 :disk_tunable_nr_requests_help:
-This defines the `nr_requests` device driver setting for all array devices.
+Określa ustawienie sterownika urządzenia `nr_requests` dla wszystkich urządzeń macierzy.
 
-**Auto** leaves the setting for each device as-is.
+**Auto** pozostawia ustawienie każdego urządzenia bez zmian.
 
-Note: if you set to blank and click Apply, the setting is restored to its default, and you must reboot for setting to take effect.
+Uwaga: wyczyszczenie pola i kliknięcie Zastosuj przywraca wartość domyślną, a ustawienie zacznie obowiązywać po ponownym uruchomieniu.
 :end
 
 :disk_tunable_scheduler_help:
-Selects which kernel I/O scheduler to use for all array devices.
+Wybiera harmonogram wejścia-wyjścia jądra używany dla wszystkich urządzeń macierzy.
 
-**Auto** leaves the setting for each device as-is (mq-deadline).
+**Auto** pozostawia ustawienie każdego urządzenia bez zmian (mq-deadline).
 
-Note: You must reboot after selecting Auto for setting to take effect.
+Uwaga: po wybraniu Auto konieczne jest ponowne uruchomienie, aby ustawienie zaczęło obowiązywać.
 :end
 
 :disk_tunable_md_num_stripes_help:
-This is the size of the *stripe pool* in number of *stripes*.  A *stripe* refers to a data structure that facilitates parallel 4K read/write
-operations necessary for a parity-protected array.
+Jest to rozmiar *puli pasków* wyrażony w liczbie *pasków*.  *Pasek* to struktura danych umożliwiająca równoległe operacje
+odczytu i zapisu po 4 kB, niezbędne w macierzy chronionej parzystością.
 
-Note: if you set to blank and click Apply, the setting is restored to its default, and will take effect after reboot.
+Uwaga: wyczyszczenie pola i kliknięcie Zastosuj przywraca wartość domyślną, która zacznie obowiązywać po ponownym uruchomieniu.
 :end
 
 :disk_tunable_md_queue_limit_help:
-This is a number in [1..100] which is the maximum steady-load percentage of the stripe pool permitted to be in use.
+Jest to liczba z zakresu [1..100] określająca maksymalny procent puli pasków, jaki może być w użyciu przy stałym obciążeniu.
 
-Note: if you set to blank and click Apply, the setting is restored to its default.
+Uwaga: wyczyszczenie pola i kliknięcie Zastosuj przywraca wartość domyślną.
 :end
 
 :disk_tunable_md_sync_limit_help:
-This is a number in [0..100] which is the maximum percentage of the stripe pool allocated for parity sync/check in the presence of other I/O.
+Jest to liczba z zakresu [0..100] określająca maksymalny procent puli pasków przeznaczony na synchronizację lub sprawdzanie parzystości przy równoczesnych operacjach wejścia-wyjścia.
 
-Note: if you set to blank and click Apply, the setting is restored to its default.
+Uwaga: wyczyszczenie pola i kliknięcie Zastosuj przywraca wartość domyślną.
 :end
 
 :disk_tunable_md_write_method_help:
-Selects the method to employ when writing to enabled disk in parity protected array.
+Wybiera metodę stosowaną przy zapisie na włączony dysk w macierzy chronionej parzystością.
 
-*Auto* selects `read/modify/write`.
+*Auto* wybiera `read/modify/write`.
 :end
 
 :disk_default_warning_utilization_help:
-*Warning disk utilization* sets the default warning threshold for all hard disks utilization. Exceeding this threshold will result in a warning notification.
+*Ostrzegawcze wykorzystanie dysku* ustawia domyślny próg ostrzegawczy dla wykorzystania wszystkich dysków twardych. Przekroczenie tego progu skutkuje powiadomieniem ostrzegawczym.
 
-When the warning threshold is set equal or greater than the critical threshold, there will be only critical notifications (warnings are not existing).
+Gdy próg ostrzegawczy jest równy progowi krytycznemu lub od niego wyższy, wysyłane są wyłącznie powiadomienia krytyczne (ostrzeżenia nie występują).
 
-A value of zero will disable the warning threshold (including notifications).
+Wartość zero wyłącza próg ostrzegawczy (wraz z powiadomieniami).
 :end
 
 :disk_default_critical_utilization_help:
