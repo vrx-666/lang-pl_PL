@@ -1075,13 +1075,13 @@ Pokazuje, czy sieci utworzone poza interfejsem graficznym są usuwane, czy zacho
 :end
 
 :docker_scrub_help:
-**Sprawdź** uruchamia program *btrfs scrub*, który bada spójność systemu plików.
+**Oczyszczanie** uruchamia program *btrfs scrub*, który bada spójność systemu plików.
 
 Jeśli potrzebna jest naprawa, należy zaznaczyć *Popraw błędy systemu plików* i uruchomić drugi przebieg; pozwoli to programowi *btrfs scrub* naprawić system plików.
 :end
 
 :docker_cancel_help:
-**Anuluj** przerywa trwającą operację sprawdzania.
+**Anuluj** przerywa trwającą operację oczyszczania.
 :end
 
 :id_server_name_help:
