@@ -1119,129 +1119,129 @@ jeśli jeszcze nie istnieją, i zapisywane na urządzeniu flash w folderze */con
 :end
 
 :mgmt_ssh_port_help:
-Enter the SSH port, default port is 22.
+Należy podać port SSH, domyślnie jest to port 22.
 :end
 
 :mgmt_use_upnp_help:
-Enable (default) or disable the UPnP function on the server. This function allows automatic forwarding of ports on the router, only applicable when UPnP is enabled on the router itself.
+Włącza (domyślnie) lub wyłącza funkcję UPnP na serwerze. Funkcja ta pozwala automatycznie przekierowywać porty na routerze i działa tylko wtedy, gdy UPnP jest włączone na samym routerze.
 :end
 
 :mgmt_use_ssl_tls_help:
-Determines how the webGUI responds to HTTP and/or HTTPS protocol.
+Określa, jak interfejs webGUI odpowiada na protokół HTTP lub HTTPS.
 
-Select **No** to disable HTTPS
+Wybranie **Nie** wyłącza HTTPS
 
-Select **Yes** to enable HTTPS and redirect HTTP to HTTPS. If a Let's Encrypt SSL certificate has not
-been provisioned, then an automatically generated self-signed SSL certificate will be used.
+Wybranie **Tak** włącza HTTPS i przekierowuje HTTP na HTTPS. Jeśli certyfikat SSL Let's Encrypt nie został
+zaopatrzony, użyty zostanie wygenerowany automatycznie certyfikat SSL z podpisem własnym.
 
-Select **Auto** if you are using or plan to use a Let's Encrypt SSL certificate provisioned
-by Lime Technology. Before the certificate is provisioned, the webGUI remains
-in http-mode. After provisioning, the webGUI automatically switches to https-mode. In addition
-two background processes are enabled:
+Wybranie **Auto** jest właściwe przy korzystaniu z certyfikatu SSL Let's Encrypt zaopatrzonego
+przez Lime Technology lub przy planowanym korzystaniu z niego. Do czasu zaopatrzenia certyfikatu webGUI pozostaje
+w trybie http. Po zaopatrzeniu webGUI przełącza się automatycznie w tryb https. Dodatkowo
+uruchamiane są dwa procesy w tle:
 
-- *updatedns* - This starts 30 seconds after server reboot has completed and contacts the Lime Technology
-DNS service to register the servers local IP address. Thereafter it wakes up every 10 minutes in case
-the local IP address has changed again.
+- *updatedns* - uruchamia się 30 sekund po zakończeniu ponownego uruchamiania serwera i kontaktuje się z usługą
+DNS Lime Technology, aby zarejestrować lokalny adres IP serwera. Następnie budzi się co 10 minut na wypadek
+kolejnej zmiany lokalnego adresu IP.
 
-- *renewcert* - This starts 60 seconds after server reboot has completed and contacts the Lime Technology
-certificate renewal service to determine if your Let's Encrypt SSL certificate needs to be renewed.
-Thereafter it wakes up every 24 hours. If within 30 days of expiration, a new certificate is automatically
-provisioned and downloaded to your server.
+- *renewcert* - uruchamia się 60 sekund po zakończeniu ponownego uruchamiania serwera i kontaktuje się z usługą
+odnawiania certyfikatów Lime Technology, aby ustalić, czy certyfikat SSL Let's Encrypt wymaga odnowienia.
+Następnie budzi się co 24 godziny. Jeśli do wygaśnięcia zostało mniej niż 30 dni, nowy certyfikat jest automatycznie
+zaopatrywany i pobierany na serwer.
 
-Note: After provisioning a Let's Encrypt SSL certificate you may turn off the *updatedns* and *newcert*
-background processes by changing this field to **Yes**.
+Uwaga: po zaopatrzeniu certyfikatu SSL Let's Encrypt procesy w tle *updatedns* i *newcert*
+można wyłączyć, zmieniając to pole na **Tak**.
 
-**nginx certificate handling details**
+**Szczegóły obsługi certyfikatów przez nginx**
 
-The nginx startup script looks for a SSL certificate on the USB boot flash in this order:<br>
+Skrypt startowy nginx szuka certyfikatu SSL na rozruchowej pamięci USB w tej kolejności:<br>
 `config/ssl/certs/certificate_bundle.pem`<br>
 `config/ssl/certs/<server-name>_unraid_bundle.pem`
 
-If neither file exists, a self-signed SSL certificate is automatically created and stored in<br>
+Jeśli żaden z tych plików nie istnieje, automatycznie tworzony jest certyfikat SSL z podpisem własnym, zapisywany w<br>
 `config/ssl/certs/<server-name>_unraid_bundle.pem`<br>
 
-Provisioning a Let's Encrypt certificate writes the certificate to<br>
+Zaopatrzenie certyfikatu Let's Encrypt zapisuje certyfikat w<br>
 `config/ssl/certs/certificate_bundle.pem`<br>
 
-**nginx stapling support**
+**Obsługa stapling w nginx**
 
-Whether nginx enables OCSP Staping is determined by which certificate is in use:<br>
-`config/ssl/certs/certificate_bundle.pem` => Yes<br>
-`config/ssl/certs/<server-name>_unraid_bundle.pem` => No
+O tym, czy nginx włącza OCSP Stapling, decyduje używany certyfikat:<br>
+`config/ssl/certs/certificate_bundle.pem` => Tak<br>
+`config/ssl/certs/<server-name>_unraid_bundle.pem` => Nie
 :end
 
 :mgmt_http_port_help:
-Enter the HTTP port, default port is 80.
+Należy podać port HTTP, domyślnie jest to port 80.
 :end
 
 :mgmt_https_port_help:
-Enter the HTTPS port, default port is 443.
+Należy podać port HTTPS, domyślnie jest to port 443.
 :end
 
 :mgmt_local_tld_help:
-Enter your local Top Level Domain. May be blank.
+Należy podać lokalną domenę najwyższego poziomu. Pole może pozostać puste.
 :end
 
 :mgmt_certificate_expiration_help:
-**Provision** may be used to allocate a *free* SSL Certficiate from [Let's Encrypt](https://letsencrypt.org/) and
-then upload to your server. Note: We **highly** recommend using a static IP address in this case.
+**Zaopatrzenie** służy do przydzielenia *bezpłatnego* certyfikatu SSL od [Let's Encrypt](https://letsencrypt.org/) i
+przesłania go na serwer. Uwaga: w takim przypadku **zdecydowanie** zalecamy statyczny adres IP.
 
-**Update DNS** may be used to manually initiate updating the DNS A-record of your server FQDN on unraid.net. Note
-that DNS propagation change could take anywhere from 1 minute to several hours (we set TTL to 60 seconds).
+**Zaktualizuj DNS** służy do ręcznego zainicjowania aktualizacji rekordu A DNS dla nazwy FQDN serwera w unraid.net. Warto pamiętać,
+że propagacja zmiany DNS może potrwać od minuty do kilku godzin (TTL ustawiamy na 60 sekund).
 
-Note: **Provision** may fail if your router or upstream DNS server has
-[DNS rebinding protection](https://en.wikipedia.org/wiki/DNS_rebinding) enabled. DNS rebinding
-protection prevents DNS from resolving a private IP network range. DNS rebinding protection is meant as
-a security feature on a local LAN which includes legacy devices with buggy/insecure "web" interfaces.
+Uwaga: **Zaopatrzenie** może się nie powieść, jeśli router lub nadrzędny serwer DNS ma włączoną
+[ochronę przed DNS rebinding](https://en.wikipedia.org/wiki/DNS_rebinding). Ochrona przed DNS rebinding
+uniemożliwia rozwiązywanie w DNS adresów z prywatnej puli IP. Jest ona pomyślana jako
+zabezpieczenie sieci lokalnej, w której znajdują się starsze urządzenia z wadliwymi lub niebezpiecznymi interfejsami „webowymi".
 
-One source of DNS rebinding protection could be your ISP DNS server. In this case the problem may be solved by
-switching to a different DNS server such as Google's public DNS.
+Źródłem ochrony przed DNS rebinding może być serwer DNS dostawcy internetu. W takim przypadku problem może rozwiązać
+przejście na inny serwer DNS, na przykład publiczny DNS Google.
 
-More commonly, DNS rebinding protection could be enabled in your router. Most consumer routers do not implement DNS
-rebinding protection; but, if they do, a configuration setting should be available to turn it off.
+Częściej ochrona przed DNS rebinding bywa włączona w routerze. Większość routerów konsumenckich nie implementuje ochrony przed
+DNS rebinding, ale jeśli ją mają, powinno być dostępne ustawienie pozwalające ją wyłączyć.
 
-Higher end routers usually do enable DNS rebinding protection however. Typically there are ways of turning it off
-entirely or selectively based on domain. Examples:
+Routery z wyższej półki zwykle jednak włączają ochronę przed DNS rebinding. Zazwyczaj można ją wyłączyć
+w całości albo wybiórczo dla domeny. Przykłady:
 
-**DD-WRT:** If you are using "dnsmasq" with DNS rebinding protection enabled, you can add this line to your router
-configuration file:
+**DD-WRT:** przy korzystaniu z „dnsmasq" z włączoną ochroną przed DNS rebinding można dodać ten wiersz do pliku
+konfiguracyjnego routera:
 
 `rebind-domain-ok=/unraid.net/`
 
-**pfSense:** If you are using pfSense internal DNS resolver service, you can add these Custom Option lines:
+**pfSense:** przy korzystaniu z wewnętrznej usługi resolwera DNS w pfSense można dodać te wiersze w Custom Options:
 
 `server:`<br>
 `private-domain: "unraid.net"`
 
-**Ubiquiti USG router:** you can add this configuration line:
+**Router Ubiquiti USG:** można dodać ten wiersz konfiguracji:
 
 `set service dns forwarding options rebind-domain-ok=/unraid.net/`
 
-**OpenDNS:** Go to Settings -> Security and *remove* the checkbox next to
- "Suspicious Responses - Block internal IP addresses". It is an all-or-nothing setting.
+**OpenDNS:** należy przejść do Settings -> Security i *usunąć* zaznaczenie przy
+ „Suspicious Responses - Block internal IP addresses". Jest to ustawienie działające w trybie wszystko albo nic.
 
-When all else fails, you can create an entry in your PC's *hosts* file to override external DNS and
-directly resolve your servers unraid.net FQDN to its local IP address.
+Gdy nic innego nie pomaga, można utworzyć wpis w pliku *hosts* na komputerze, aby ominąć zewnętrzny DNS i
+rozwiązywać nazwę FQDN serwera w unraid.net bezpośrednio na jego lokalny adres IP.
 :end
 
 :ftp_server_help:
-Enable or disable the FTP server daemon. By default the FTP server is enabled.
-This setting is not saved, i.e. upon system reboot it will revert to its default setting.
+Włącza lub wyłącza usługę serwera FTP. Domyślnie serwer FTP jest włączony.
+To ustawienie nie jest zapisywane, czyli po ponownym uruchomieniu systemu wróci do wartości domyślnej.
 :end
 
 :ftp_users_help:
-Enter the user names (separated by spaces) permitted to access the server using FTP.
-To disallow any user access, clear this setting.
+Należy podać nazwy użytkowników (oddzielone spacjami) uprawnionych do dostępu do serwera przez FTP.
+Aby zabronić dostępu wszystkim użytkownikom, należy wyczyścić to ustawienie.
 
-**Note:** do not enter user name `root` since this may cause problems in the future.
+**Uwaga:** nie należy wpisywać nazwy użytkownika `root`, ponieważ może to w przyszłości powodować problemy.
 :end
 
 :ftp_overview_help:
-### Overview
+### Przegląd
 
-Unraid includes the popular `vsftpd` FTP server.  The configuration of `vsftp` is currently very
-simple: **All** user names entered above are permitted to access the server via FTP and will have
-*full read/write/delete access* to the entire server, so use with caution.
+Unraid zawiera popularny serwer FTP `vsftpd`.  Konfiguracja `vsftp` jest obecnie bardzo
+prosta: **wszyscy** użytkownicy wpisani powyżej mają dostęp do serwera przez FTP i będą mieli
+*pełny dostęp do odczytu, zapisu i usuwania* na całym serwerze, więc należy używać tego ostrożnie.
 :end
 
 :smb_enable_help:
