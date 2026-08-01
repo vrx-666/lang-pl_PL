@@ -1480,64 +1480,64 @@ Należy wskazać udział użytkownika zawierający wszystkie nośniki instalacyj
 :end
 
 :vms_virtio_driver_help:
-Specify the virtual CD-ROM (ISO) that contains the VirtIO Windows drivers as provided by the Fedora Project.
-Download the latest ISO from here: <a href="https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html#virtio-win-direct-downloads" target="_blank">fedoraproject.org</a>
+Należy wskazać wirtualny napęd CD-ROM (ISO) zawierający sterowniki VirtIO dla Windows udostępniane przez Projekt Fedora.
+Najnowszy obraz ISO można pobrać tutaj: <a href="https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html#virtio-win-direct-downloads" target="_blank">fedoraproject.org</a>
 
-When installing Windows, you will reach a step where no disk devices will be found. There is an option to browse for drivers on that screen.
-Click browse and locate the additional CD-ROM in the menu. Inside there will be various folders for the different versions of Windows.
-Open the folder for the version of Windows you are installing and then select the AMD64 subfolder inside (even if you are on an Intel system, select AMD64).
-Three drivers will be found. Select them all, click next, and the vDisks you have assigned will appear.
+Podczas instalacji systemu Windows pojawi się krok, w którym nie zostaną znalezione żadne urządzenia dyskowe. Na tym ekranie jest opcja przeglądania w poszukiwaniu sterowników.
+Należy kliknąć przeglądanie i odszukać w menu dodatkowy napęd CD-ROM. Znajdują się w nim różne foldery dla poszczególnych wersji systemu Windows.
+Trzeba otworzyć folder wersji instalowanego systemu Windows, a następnie wybrać w nim podfolder AMD64 (nawet na systemie Intela należy wybrać AMD64).
+Znalezione zostaną trzy sterowniki. Należy zaznaczyć wszystkie, kliknąć dalej, a wtedy pojawią się przypisane dyski wirtualne.
 :end
 
 
 :vms_host_shutdown_help:
-When shutting down the server, this defines the action to take upon running VMs. If *Hibernate VMs* is chosen,
-the VM will be instructed to hibernate (if supported) otherwise it will attempt a VM shutdown.
+Określa, co zrobić z działającymi maszynami wirtualnymi podczas wyłączania serwera. Wybranie *Hibernacja maszyn wirtualnych* sprawia,
+że maszyna otrzyma polecenie hibernacji (jeśli ją obsługuje), a w przeciwnym razie nastąpi próba jej zamknięcia.
 :end
 
 :vms_shutdown_timeout_help:
-When shutting down the server, this defines how long to wait in seconds for *graceful* VM shutdown before forcing shutdown to continue.
-NOTE: It's recommended to shut down guest VMs from within the VM.
+Określa, ile sekund podczas wyłączania serwera należy czekać na *łagodne* zamknięcie maszyny wirtualnej, zanim wyłączanie zostanie wymuszone.
+UWAGA: zaleca się zamykanie maszyn gościa od wewnątrz, z poziomu samej maszyny.
 :end
 
 :vms_acs_override_help:
-*PCIe ACS override* allows various hardware components to expose themselves as isolated devices.
-Typically it is sufficient to isolate *Downstream* ports.
-A hardware component may need the setting *Multi-function* or *Both* to further isolate different hardware functions.<br>
-A reboot is required for changes to this setting to take affect.
+*Zastąpienie ACS PCIe* pozwala różnym komponentom sprzętowym przedstawiać się jako odizolowane urządzenia.
+Zwykle wystarczy odizolować porty *Downstream*.
+Komponent sprzętowy może wymagać ustawienia *Wielofunkcyjny* lub *Oba*, aby dodatkowo odizolować poszczególne funkcje sprzętowe.<br>
+Aby zmiana tego ustawienia zaczęła obowiązywać, konieczne jest ponowne uruchomienie.
 
-**Warning: use of this setting could cause possible data corruption with certain hardware configurations.**
-Please visit the [Lime Technology forums](https://forums.unraid.net/forum/51-vm-engine-kvm) for more information.
+**Ostrzeżenie: użycie tego ustawienia może przy niektórych konfiguracjach sprzętowych doprowadzić do uszkodzenia danych.**
+Więcej informacji na [forach Lime Technology](https://forums.unraid.net/forum/51-vm-engine-kvm).
 :end
 
 :vms_vfio_interupts_help:
-If your system doesn't support interrupt remapping, these can be enabled by allowing unsafe interrupts.<br>
-A reboot will be required for changes to this setting to take affect.
+Jeśli system nie obsługuje przemapowywania przerwań, można je włączyć, zezwalając na niebezpieczne przerwania.<br>
+Aby zmiana tego ustawienia zaczęła obowiązywać, konieczne będzie ponowne uruchomienie.
 
-**Warning: use of this setting could cause possible data corruption with certain hardware configurations.**
-Please visit the [Lime Technology forums](https://forums.unraid.net/forum/51-vm-engine-kvm) for more information.
+**Ostrzeżenie: użycie tego ustawienia może przy niektórych konfiguracjach sprzętowych doprowadzić do uszkodzenia danych.**
+Więcej informacji na [forach Lime Technology](https://forums.unraid.net/forum/51-vm-engine-kvm).
 :end
 
 :vms_libvirt_log_help:
-View the log for libvirt: <a onclick="openTerminal('log','libvirt','libvirt/libvirtd.log')">View libvirtd.log</a>
+Podgląd dziennika libvirt: <a onclick="openTerminal('log','libvirt','libvirt/libvirtd.log')">Zobacz libvirtd.log</a>
 :end
 
 :vms_scrub_help:
-**Scrub** runs the *btrfs scrub* program to check file system integrity.
-If repair is needed you should check the *Correct file system errors* and run a second Scrub pass; this will permit *btrfs scrub* to fix the file system.
+**Oczyszczanie** uruchamia program *btrfs scrub*, który bada spójność systemu plików.
+Jeśli potrzebna jest naprawa, należy zaznaczyć *Popraw błędy systemu plików* i uruchomić drugi przebieg; pozwoli to programowi *btrfs scrub* naprawić system plików.
 :end
 
 :vms_cancel_help:
-**Cancel* will cancel the Scrub operation in progress.
+**Anuluj* przerywa trwającą operację oczyszczania.
 :end
 
 :eth_interface_description_help:
-Use this optional field to provide additional information about the purpose of the connection.
+To opcjonalne pole służy do podania dodatkowych informacji o przeznaczeniu połączenia.
 :end
 
 :eth_mac_address_help:
-This is the hardware address of the interface.
-When tagging is enabled all VLANs on this interface will share the same hardware address.
+Jest to adres sprzętowy interfejsu.
+Po włączeniu tagowania wszystkie sieci VLAN na tym interfejsie będą korzystać z tego samego adresu sprzętowego.
 :end
 
 :eth_enable_bonding_help:
