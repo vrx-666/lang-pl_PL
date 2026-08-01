@@ -363,56 +363,56 @@ Funkcja jest dostępna tylko wtedy, gdy dysk pracuje w trybie aktywnym.
 :end
 
 :selftest_short_test_help:
-Starts a *short* SMART self-test, the estimated duration can be viewed under the *Capabilities* section. This is usually a few minutes.
+Uruchamia *krótki* autotest SMART; szacowany czas trwania jest widoczny w sekcji *Możliwości*. Zwykle zajmuje kilka minut.
 
-When the disk is spun down, it will abort any running self-test.
-This feature is only available when the disk is in active mode.
+Uśpienie dysku przerywa każdy trwający autotest.
+Funkcja jest dostępna tylko wtedy, gdy dysk pracuje w trybie aktywnym.
 :end
 
 :selftest_long_test_help:
-Starts an *extended* SMART self-test, the estimated duration can be viewed under the *Capabilities* section. This is usually several hours.
+Uruchamia *rozszerzony* autotest SMART; szacowany czas trwania jest widoczny w sekcji *Możliwości*. Zwykle zajmuje kilka godzin.
 
-When the disk is spun down, it will abort any running self-test. It is advised to disable the spin down timer of the disk
-to avoid interruption of this self-test.
+Uśpienie dysku przerywa każdy trwający autotest. Zalecane jest wyłączenie licznika uśpienia dysku,
+aby uniknąć przerwania tego autotestu.
 
-This feature is only available when the disk is in active mode.
+Funkcja jest dostępna tylko wtedy, gdy dysk pracuje w trybie aktywnym.
 :end
 
 :selftest_result_help:
-When no test is running it will show here the latest obtained self-test result (if available).
-Otherwise a progress indicator (percentage value) is shown for a running test.
+Gdy żaden test nie jest uruchomiony, wyświetlany jest tutaj ostatni uzyskany wynik autotestu (jeśli jest dostępny).
+W przeciwnym razie dla trwającego testu pokazywany jest wskaźnik postępu (wartość procentowa).
 :end
 
 :smart_attributes_help:
-This list shows the SMART attributes supported by this disk. For more information about each SMART attribute, it is recommended to search online.
+Ta lista przedstawia atrybuty SMART obsługiwane przez ten dysk. Po więcej informacji o poszczególnych atrybutach SMART zalecane jest wyszukanie ich w internecie.
 
-Attributes in *orange* may require your attention. They have a **raw value** greater than zero and may indicate a pending disk failure.
+Atrybuty oznaczone na *pomarańczowo* mogą wymagać uwagi. Ich **surowa wartość** jest większa od zera i może zapowiadać awarię dysku.
 
-Special attention is required when the particular attribute raw value starts to increase over time. When in doubt, consult the Limetech forum for advice.
+Szczególnej uwagi wymaga sytuacja, w której surowa wartość danego atrybutu zaczyna z czasem rosnąć. W razie wątpliwości warto zasięgnąć porady na forum Limetech.
 :end
 
 :smart_capabilities_help:
-This list shows the SMART capabilities supported by this disk.
+Ta lista przedstawia możliwości SMART obsługiwane przez ten dysk.
 
-Observe here the estimated duration of the SMART short and extended self-tests.
+Widoczny jest tutaj szacowany czas trwania krótkiego i rozszerzonego autotestu SMART.
 :end
 
 :smart_identity_help:
-This list shows the SMART identity information of this disk
+Ta lista przedstawia informacje identyfikacyjne SMART tego dysku
 :end
 
 :open_devices_help:
-These are devices installed in your server but not assigned to either the parity-protected
-array or the cache disk/pool.
+Są to urządzenia zainstalowane w serwerze, ale nieprzypisane ani do macierzy
+chronionej parzystością, ani do dysku lub puli cache.
 :end
 
 :flash_backup_help:
-Use *Flash backup* to create a single zip file of the current contents of the flash device and store it locally on your computer.
+Opcja *Kopia zapasowa pamięci flash* tworzy pojedynczy plik zip z bieżącą zawartością urządzenia flash i zapisuje go lokalnie na komputerze.
 :end
 
 :syslinux_cfg_help:
-Use this page to make changes to your `syslinux.cfg` file.
-You will need to reboot your server for these changes to take effect.
+Ta strona służy do wprowadzania zmian w pliku `syslinux.cfg`.
+Aby zmiany zaczęły obowiązywać, konieczne jest ponowne uruchomienie serwera.
 :end
 
 :syslinux_button_help:
