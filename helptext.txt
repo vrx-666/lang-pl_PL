@@ -960,62 +960,62 @@ Czas w sekundach przeznaczony na łagodne zatrzymanie kontenera, zanim zatrzyman
 :end
 
 :docker_vdisk_type_help:
-Select where to keep the Docker persistent state.
+Wybór miejsca przechowywania trwałego stanu Dockera.
 
-This can be an image file with a specific size or a dedicated folder.
+Może to być plik obrazu o określonym rozmiarze albo osobny folder.
 :end
 
 :docker_vdisk_size_help:
-If the system needs to create a new docker image file, this is the default size to use specified in GB.
+Rozmiar w GB, jakiego system użyje domyślnie, jeśli będzie musiał utworzyć nowy plik obrazu dockera.
 
-To resize an existing image file, specify the new size here. Next time the Docker service is started the file (and file system) will be increased to the new size (but never decreased).
+Aby zmienić rozmiar istniejącego pliku obrazu, należy podać tutaj nowy rozmiar. Przy kolejnym uruchomieniu usługi Docker plik (i system plików) zostanie powiększony do nowego rozmiaru (ale nigdy pomniejszony).
 :end
 
 :docker_vdisk_location_help:
-You must specify an image file for Docker. The system will automatically create this file when the Docker service is first started.
+Dla Dockera trzeba wskazać plik obrazu. System utworzy ten plik automatycznie przy pierwszym uruchomieniu usługi Docker.
 
-The image file name must have the extension .img, If not the input is not accepted and marked red.
+Nazwa pliku obrazu musi mieć rozszerzenie .img. W przeciwnym razie wpis nie zostanie przyjęty i zostanie oznaczony na czerwono.
 
-It is recommended to create this image file outside the array, e.g. on the Cache pool. For best performance SSD devices are preferred.
+Zaleca się utworzenie tego pliku obrazu poza macierzą, na przykład na puli Cache. Najlepszą wydajność dają dyski SSD.
 :end
 
 :docker_vdisk_directory_help:
-You must specify a folder for Docker. The system will automatically create this folder when the Docker service is first started.
+Dla Dockera trzeba wskazać folder. System utworzy ten folder automatycznie przy pierwszym uruchomieniu usługi Docker.
 
-It is recommended to create this folder under a share which resides on the Cache pool (setting: cache=Only). For best performance SSD devices are preferred.
+Zaleca się utworzenie tego folderu w udziale znajdującym się na puli Cache (ustawienie: cache=Tylko). Najlepszą wydajność dają dyski SSD.
 :end
 
 :docker_appdata_location_help:
-You can specify a folder to automatically generate and store subfolders containing configuration files for each Docker app (via the /config mapped volume).
+Można wskazać folder, w którym będą automatycznie tworzone i przechowywane podfoldery z plikami konfiguracyjnymi każdej aplikacji Dockera (przez zamapowany wolumin /config).
 
-The folder's path must end with a trailing slash (/) character. If not the input is not accepted and marked red.
+Ścieżka folderu musi kończyć się ukośnikiem (/). W przeciwnym razie wpis nie zostanie przyjęty i zostanie oznaczony na czerwono.
 
-It is recommended to create this folder outside the array, e.g. on the Cache pool. For best performance SSD devices are preferred.
+Zaleca się utworzenie tego folderu poza macierzą, na przykład na puli Cache. Najlepszą wydajność dają dyski SSD.
 
-Only used when adding new Docker apps. Editing existing Docker apps will not be affected by this setting.
+Ustawienie działa wyłącznie przy dodawaniu nowych aplikacji Dockera. Edycja istniejących aplikacji Dockera nie jest nim objęta.
 :end
 
 :docker_log_rotation_help:
-By default LOG rotation is disabled and will create a single LOG file of unlimited size.
+Domyślnie rotacja DZIENNIKA jest wyłączona i powstaje jeden plik DZIENNIKA o nieograniczonym rozmiarze.
 
-Enable LOG rotation to limit the size of the LOG file and specify the number of files to keep in the rotation scheme.
+Włączenie rotacji DZIENNIKA ogranicza rozmiar pliku DZIENNIKA i pozwala określić liczbę plików zachowywanych w schemacie rotacji.
 :end
 
 :docker_log_file_size_help:
-Specifies the maximum LOG size. When exceeded LOG rotation will occur.
+Określa maksymalny rozmiar DZIENNIKA. Po jego przekroczeniu nastąpi rotacja DZIENNIKA.
 :end
 
 :docker_log_file_number_help:
-Specifies the number of LOG files when LOG rotation is done.
+Określa liczbę plików DZIENNIKA przy rotacji.
 :end
 
 :docker_authoring_mode_help:
-If set to **Yes**, when creating/editing containers the interface will be present with some extra fields related to template authoring.
+Ustawienie **Tak** sprawia, że przy tworzeniu i edycji kontenerów interfejs pokazuje dodatkowe pola związane z tworzeniem szablonów.
 :end
 
 :docker_custom_network_access_help:
-Allows direct communication between the host and containers using a custom (macvlan) network.<br>
-By default this is prohibited.
+Zezwala na bezpośrednią komunikację między gospodarzem a kontenerami korzystającymi z sieci niestandardowej (macvlan).<br>
+Domyślnie jest to zabronione.
 :end
 
 :docker_user_defined_network_help:
