@@ -712,72 +712,72 @@ Obraz zostanie przeskalowany do rozmiaru 48x48 pikseli. Maksymalny rozmiar przes
 :end
 
 :user_password_help:
-Up to 128 characters.
+Do 128 znaków.
 :end
 
 :user_edit_description_help:
-Up to 64 characters. The characters ampersand (&amp;) quote (&quot;) and colon (:) are not allowed.
+Do 64 znaków. Znaki ampersand (&amp;), cudzysłów (&quot;) i dwukropek (:) są niedozwolone.
 :end
 
 :user_edit_custom_image_help:
-The image will be scaled to 48x48 pixels in size. The maximum image file upload size is 512 kB (524,288 bytes).
+Obraz zostanie przeskalowany do rozmiaru 48x48 pikseli. Maksymalny rozmiar przesyłanego pliku obrazu to 512 kB (524 288 bajtów).
 :end
 
 :cpu_vms_help:
-This page gives a total view of the current CPU pinning assignments for VMs.<br>
-It also allows to modify these assignments.
+Ta strona daje pełny obraz bieżącego przypisania rdzeni procesora do maszyn wirtualnych.<br>
+Pozwala również te przypisania zmieniać.
 
-Running VMs are **stopped first** and restarted after the modification.<br>
-Stopped VMs are instantly modified and new assignments become active when the VM is started.
+Działające maszyny wirtualne są **najpierw zatrzymywane**, a po zmianie uruchamiane ponownie.<br>
+Zatrzymane maszyny wirtualne są zmieniane natychmiast, a nowe przypisania zaczynają obowiązywać przy ich uruchomieniu.
 
-When ***Apply*** is pressed a scan is performed to find the changes, subsequently only VMs which have changes are modified in parallel.
+Naciśnięcie ***Zastosuj*** uruchamia wyszukiwanie zmian, po czym równolegle modyfikowane są wyłącznie te maszyny wirtualne, w których coś się zmieniło.
 
-*Important: Please wait until all updates are finished before leaving this page*.
+*Ważne: przed opuszczeniem tej strony trzeba zaczekać na zakończenie wszystkich aktualizacji*.
 :end
 
 :cpu_pinning_help:
-This page gives a total view of the current CPU pinning assignments for Docker containers.<br>
-It also allows to modify these assignments.
+Ta strona daje pełny obraz bieżącego przypisania rdzeni procesora do kontenerów Dockera.<br>
+Pozwala również te przypisania zmieniać.
 
-Running containers are **stopped first** and restarted after the modification.<br>
-Stopped containers are instantly modified and new assignments become active when the user manually starts the container.
+Działające kontenery są **najpierw zatrzymywane**, a po zmianie uruchamiane ponownie.<br>
+Zatrzymane kontenery są zmieniane natychmiast, a nowe przypisania zaczynają obowiązywać przy ręcznym uruchomieniu kontenera.
 
-When ***Apply*** is pressed a scan is performed to find the changes, subsequently containers which have changes are modified in parallel.
+Naciśnięcie ***Zastosuj*** uruchamia wyszukiwanie zmian, po czym równolegle modyfikowane są kontenery, w których coś się zmieniło.
 
-*Important: Please wait until all updates are finished before leaving this page*.
+*Ważne: przed opuszczeniem tej strony trzeba zaczekać na zakończenie wszystkich aktualizacji*.
 
-By default NO cores are selected for a Docker container, which means it uses all available cores.<br>
-Do not select **ALL** cores for containers, just select **NO** cores if you want unrestricted core use.
+Domyślnie dla kontenera Dockera nie jest zaznaczony ŻADEN rdzeń, co oznacza, że kontener korzysta ze wszystkich dostępnych rdzeni.<br>
+Nie należy zaznaczać kontenerom **WSZYSTKICH** rdzeni — dla nieograniczonego dostępu do rdzeni wystarczy nie zaznaczać **ŻADNEGO**.
 
-Do not select cores for containers which are *isolated*.
-By design a container will only use a single core (the lowest numbered core) when multiple isolated cores are selected.<br>
-Usually this is not what a user wants when selecting multiple cores.
+Nie należy zaznaczać kontenerom rdzeni *izolowanych*.
+Z założenia kontener użyje tylko jednego rdzenia (o najniższym numerze), gdy zaznaczono kilka rdzeni izolowanych.<br>
+Zwykle nie o to chodzi osobie zaznaczającej kilka rdzeni.
 :end
 
 :cpu_isolation_help:
-CPU isolation allows the user to specify CPU cores that are to be explicitly reserved for assignment (to VMs or Docker containers).
+Izolacja procesora pozwala wskazać rdzenie procesora zarezerwowane wyłącznie do przypisania (maszynom wirtualnym lub kontenerom Dockera).
 
-This is incredibly important for gaming VMs to run smoothly because even if you manually pin your Docker containers to not overlap with your gaming VM,
-the host OS can still utilize those same cores as the guest VM needs for things like returning responses for the webGui, running a parity check, btrfs operations, etc.
+Jest to niezwykle ważne dla płynnego działania maszyn wirtualnych do gier: nawet po ręcznym przypięciu kontenerów Dockera tak, aby nie pokrywały się z maszyną do gier,
+system gospodarza nadal może wykorzystywać te same rdzenie, których potrzebuje maszyna gościa — na przykład do odpowiedzi interfejsu webGui, sprawdzania parzystości czy operacji btrfs.
 :end
 
 :timezone_help:
-Select your applicable time zone from the drop-down list.
+Należy wybrać z listy rozwijanej właściwą strefę czasową.
 :end
 
 :use_ntp_help:
-Select 'Yes' to use Network Time Protocol to keep your server time accurate.
-We **highly** recommend the use of a network time server, especially if you plan on using Active Directory.
+Wybranie „Tak" włącza protokół NTP, który utrzymuje dokładny czas serwera.
+Korzystanie z sieciowego serwera czasu jest **zdecydowanie** zalecane, szczególnie przy planowanym użyciu Active Directory.
 
-Note: if using `pool.ntp.org` time servers, please also refer to [their documentation](http://www.pool.ntp.org/en/use.html).
+Uwaga: przy korzystaniu z serwerów czasu `pool.ntp.org` warto zapoznać się też z [ich dokumentacją](http://www.pool.ntp.org/en/use.html).
 :end
 
 :ntp_server1_help:
-This is the primary NTP server to use.  Enter a FQDN or an IP address.
+Jest to podstawowy używany serwer NTP.  Należy podać pełną nazwę domenową (FQDN) lub adres IP.
 :end
 
 :ntp_server2_help:
-This is the alternate NTP server to use if NTP Server 1 is down.
+Jest to zapasowy serwer NTP, używany, gdy Serwer NTP 1 jest niedostępny.
 :end
 
 :ntp_server3_help:
