@@ -1245,58 +1245,58 @@ prosta: **wszyscy** użytkownicy wpisani powyżej mają dostęp do serwera przez
 :end
 
 :smb_enable_help:
-Select 'Yes (Workgroup)' to enable SMB (Windows Networking) protocol support. This
-also enables Windows host discovery.
+Wybranie „Tak (Grupa robocza)" włącza obsługę protokołu SMB (sieci Windows). Włącza to
+również wykrywanie hostów Windows.
 
-Select 'Yes (Active Directory)' to enable Active Directory integration.
+Wybranie „Tak (Active Directory)" włącza integrację z Active Directory.
 :end
 
 :smb_hide_files_help:
-If set to 'Yes' then files starting with a '.' (dot) will appear as *hidden files* and normally
-will not appear in Windows folder lists unless you have "Show hidden files, folders, and drives" enabled
-in Windows Folder Options.
+Ustawienie „Tak" sprawia, że pliki zaczynające się od kropki („.") są traktowane jako *pliki ukryte* i zwykle
+nie pojawiają się na listach folderów Windows, chyba że w Opcjach folderów systemu Windows włączono opcję
+„Pokaż ukryte pliki, foldery i dyski".
 
-If set to 'No' then dot files will appear in folder lists the same as any other file.
+Ustawienie „Nie" sprawia, że pliki z kropką pojawiają się na listach folderów tak samo jak każdy inny plik.
 :end
 
 :smb_enhanced_macos_help:
-When set to 'Yes' provides enhanced compatibility with Apple SMB clients, resulting, for example, in faster
-Finder browsing, and ability to export Time Machine shares.  This may cause some issues with Windows clients, however.
-Please also refer to the [VFS_FRUIT MAN PAGE](https://www.mankier.com/8/vfs_fruit).
+Ustawienie „Tak" zapewnia lepszą zgodność z klientami SMB firmy Apple, dzięki czemu na przykład szybciej działa
+przeglądanie w Finderze i możliwe jest eksportowanie udziałów Time Machine.  Może to jednak powodować problemy z klientami Windows.
+Warto zapoznać się też ze [STRONĄ PODRĘCZNIKA VFS_FRUIT](https://www.mankier.com/8/vfs_fruit).
 :end
 
 :smb_enable_netbios_help:
-Select 'Yes' to enable NetBIOS.  If enabled, SMBv1 protocol will also be recognized.  If disabled,
-clients must use SMBv2 or higher.
+Wybranie „Tak" włącza NetBIOS.  Po włączeniu rozpoznawany jest również protokół SMBv1.  Po wyłączeniu
+klienci muszą korzystać z SMBv2 lub nowszego.
 :end
 
 :smb_enable_wsd_help:
-Select 'Yes' to enable WSD (WS-Discovery).  The only reason to turn this off is when you are running an
-old LAN setup based on SMBv1.
+Wybranie „Tak" włącza WSD (WS-Discovery).  Jedynym powodem, by to wyłączyć, jest praca w
+starej sieci lokalnej opartej na SMBv1.
 :end
 
 :smb_wsd_options_help:
-This is a command line options string passed to the WSD daemon upon startup. Leave this field blank unless
-instructed by support to put something here.
+Jest to ciąg opcji wiersza poleceń przekazywany usłudze WSD przy uruchomieniu. Pole należy zostawić puste, chyba że
+wsparcie techniczne poleci wpisać tu coś konkretnego.
 :end
 
 :smb_extra_conf_help:
-Use this page to make changes to your `smb-extra.conf` file.  Samba will need
-to be restarted in order for changes to take effect.
+Ta strona służy do wprowadzania zmian w pliku `smb-extra.conf`.  Aby zmiany zaczęły
+obowiązywać, trzeba ponownie uruchomić Sambę.
 :end
 
 :smb_extra_button_help:
-Click the **Apply** button to commit the current edits.  Click **Reset** to
-undo any changes you make (before Saving). Click **Done** to exit this page.
+Kliknięcie przycisku **Zastosuj** zatwierdza bieżące zmiany.  Kliknięcie **Resetuj**
+cofa wprowadzone zmiany (przed zapisaniem). Kliknięcie **Gotowe** zamyka tę stronę.
 :end
 
 :smb_workgroup_help:
-Enter your local network Workgroup name. Usually this is "WORKGROUP".
+Należy podać nazwę grupy roboczej sieci lokalnej. Zwykle jest to „WORKGROUP".
 :end
 
 :smb_local_master_help:
-If set to 'Yes' then the server will fully participate in browser elections, and in the absence
-of other servers, will usually become the local Master Browser.
+Ustawienie „Tak" sprawia, że serwer w pełni uczestniczy w wyborach przeglądarki sieci i w razie braku
+innych serwerów zwykle staje się lokalnym Master Browserem.
 :end
 
 :nfs_enable_help:
