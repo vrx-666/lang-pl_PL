@@ -1437,46 +1437,46 @@ Wybranie „Automatycznie" dołącza WWN do identyfikacji urządzenia w przypadk
 :end
 
 :display_custom_text_color_help:
-Overrule the default text color in the header. This can be used to match the text color with a background image.
+Zastępuje domyślny kolor tekstu w nagłówku. Pozwala dopasować kolor tekstu do obrazu tła.
 :end
 
 :display_custom_background_color_help:
-Overrule the default background color in the header. This can be used to match the background color with a custom text color.
+Zastępuje domyślny kolor tła w nagłówku. Pozwala dopasować kolor tła do własnego koloru tekstu.
 :end
 
 :display_custom_banner_help:
-Image will be scaled to 1920x90 pixels. The maximum image file upload size is 512 kB (524,288 bytes).
+Obraz zostanie przeskalowany do 1920x90 pikseli. Maksymalny rozmiar przesyłanego pliku obrazu to 512 kB (524 288 bajtów).
 :end
 
 :display_temperature_unit_help:
-Selects the temperature unit for the disk temperature thresholds. Changing the unit will adjust the existing value in the disk temperature thresholds as appropriate.
+Wybór jednostki temperatury dla progów temperatury dysków. Zmiana jednostki odpowiednio przeliczy wartości już wpisane w progach temperatury dysków.
 
-Make sure any newly entered values represent the selected temperature unit.
+Nowo wpisywane wartości muszą odpowiadać wybranej jednostce temperatury.
 :end
 
 :vms_enable_help:
-Stopping the VM Manager will first attempt to shutdown all running VMs. After 60 seconds, any remaining VM instances will be terminated.
+Zatrzymanie Menedżera maszyn wirtualnych najpierw spróbuje zamknąć wszystkie działające maszyny. Po 60 sekundach pozostałe instancje maszyn zostaną zakończone.
 :end
 
 :vms_libvirt_volume_help:
-This is the libvirt volume.
+Jest to wolumin libvirt.
 :end
 
 :vms_libvirt_vdisk_size_help:
-If the system needs to create a new libvirt image file, this is the default size to use specified in GB.
-To resize an existing image file, specify the new size here. Next time the Libvirt service is started the file (and file system) will be increased to the new size (but never decreased).
+Rozmiar w GB, jakiego system użyje domyślnie, jeśli będzie musiał utworzyć nowy plik obrazu libvirt.
+Aby zmienić rozmiar istniejącego pliku obrazu, należy podać tutaj nowy rozmiar. Przy kolejnym uruchomieniu usługi Libvirt plik (i system plików) zostanie powiększony do nowego rozmiaru (ale nigdy pomniejszony).
 :end
 
 :vms_libvirt_location_help:
-You must specify an image file for Libvirt. The system will automatically create this file when the Libvirt service is first started.
+Dla Libvirt trzeba wskazać plik obrazu. System utworzy ten plik automatycznie przy pierwszym uruchomieniu usługi Libvirt.
 :end
 
 :vms_libvirt_storage_help:
-Specify a user share that contains all your VM subdirectories with vdisks
+Należy wskazać udział użytkownika zawierający wszystkie podkatalogi maszyn wirtualnych z dyskami wirtualnymi
 :end
 
 :vms_libvirt_iso_storage_help:
-Specify a user share that contains all your installation media for operating systems
+Należy wskazać udział użytkownika zawierający wszystkie nośniki instalacyjne systemów operacyjnych
 :end
 
 :vms_virtio_driver_help:
