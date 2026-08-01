@@ -1071,51 +1071,51 @@ Domyślnie jest to zabronione.
 :end
 
 :docker_user_defined_network_active_help:
-Shows whether networks created outside of the GUI are removed or preserved for Docker. When preserved *user defined networks* become available in the *Network type* dropdown list of containers.
+Pokazuje, czy sieci utworzone poza interfejsem graficznym są usuwane, czy zachowywane na potrzeby Dockera. Zachowane *sieci zdefiniowane przez użytkownika* pojawiają się na liście rozwijanej *Typ sieci* w kontenerach.
 :end
 
 :docker_scrub_help:
-**Scrub** runs the *btrfs scrub* program to check file system integrity.
+**Sprawdź** uruchamia program *btrfs scrub*, który bada spójność systemu plików.
 
-If repair is needed you should check the *Correct file system errors* and run a second Scrub pass; this will permit *btrfs scrub* to fix the file system.
+Jeśli potrzebna jest naprawa, należy zaznaczyć *Popraw błędy systemu plików* i uruchomić drugi przebieg; pozwoli to programowi *btrfs scrub* naprawić system plików.
 :end
 
 :docker_cancel_help:
-**Cancel** will cancel the Scrub operation in progress.
+**Anuluj** przerywa trwającą operację sprawdzania.
 :end
 
 :id_server_name_help:
-The network identity of your server.  Also known as *hostname* or *short hostname*. Windows networking
-refers to this as the *NetBIOS name* and must be 15 characters or less in length.
-Use only alphanumeric characters (that is, "A-Z", "a-z", and "0-9"), dashes ("-"), and dots (".");
-and, the first and last characters must be alphanumeric.
+Tożsamość sieciowa serwera.  Nazywana też *nazwą hosta* lub *krótką nazwą hosta*. W sieciach Windows
+określana jest jako *nazwa NetBIOS* i nie może przekraczać 15 znaków.
+Dozwolone są wyłącznie znaki alfanumeryczne (czyli „A-Z", „a-z" i „0-9"), myślniki („-") i kropki („.");
+przy czym pierwszy i ostatni znak musi być alfanumeryczny.
 :end
 
 :id_description_help:
-This is a text field that is seen next to a server when listed within Network or File Explorer
-(Windows), or Finder (macOS).
+Jest to pole tekstowe widoczne obok serwera na liście w Sieci lub Eksploratorze plików
+(Windows) albo w Finderze (macOS).
 :end
 
 :id_model_help:
-This is the server model number.
+Jest to numer modelu serwera.
 :end
 
 :mgmt_start_page_help:
-Select the page which is opened first when entering the GUI. By default the *Main* page is selected.
+Wybór strony otwieranej jako pierwsza po wejściu do interfejsu graficznego. Domyślnie wybrana jest strona *Główna*.
 :end
 
 :mgmt_use_telnet_help:
-By default TELNET access is enabled. TELNET is an insecure type of CLI access however,
-and it is highly recommended to use SSH access instead and disable TELNET access.
+Domyślnie dostęp przez TELNET jest włączony. TELNET jest jednak niebezpiecznym sposobem dostępu do wiersza poleceń,
+dlatego zdecydowanie zaleca się korzystanie z SSH i wyłączenie dostępu przez TELNET.
 :end
 
 :mgmt_telnet_port_help:
-Enter the TELNET port, default port is 23.
+Należy podać port TELNET, domyślnie jest to port 23.
 :end
 
 :mgmt_use_ssh_help:
-SSH is enabled by default and offers a secure way of CLI access. Upon system startup SSH keys are automatically generated
-if not yet existing, and stored on the flash device in the folder */config/ssh*.
+SSH jest włączone domyślnie i zapewnia bezpieczny dostęp do wiersza poleceń. Przy starcie systemu klucze SSH są generowane automatycznie,
+jeśli jeszcze nie istnieją, i zapisywane na urządzeniu flash w folderze */config/ssh*.
 :end
 
 :mgmt_ssh_port_help:
