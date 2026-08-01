@@ -228,11 +228,11 @@ Można wpisać dowolną treść, do 256 znaków.
 :end
 
 :info_warning_utilization_help:
-*Warning disk utilization* sets the warning threshold for this hard disk utilization. Exceeding this threshold will result in a warning notification.
+*Ostrzegawcze wykorzystanie dysku* ustawia próg ostrzegawczy dla wykorzystania tego dysku twardego. Przekroczenie tego progu skutkuje powiadomieniem ostrzegawczym.
 
-When the warning threshold is set equal or greater than the critical threshold, there will be only critical notifications (warnings are not existing).
+Gdy próg ostrzegawczy jest równy progowi krytycznemu lub od niego wyższy, wysyłane są wyłącznie powiadomienia krytyczne (ostrzeżenia nie występują).
 
-A value of zero will disable the warning threshold (including notifications).
+Wartość zero wyłącza próg ostrzegawczy (wraz z powiadomieniami).
 :end
 
 :info_critical_utilization_help:
@@ -242,22 +242,22 @@ Wartość zero wyłącza próg krytyczny (wraz z powiadomieniami).
 :end
 
 :info_btrfs_balance_help:
-**Balance** will run the *btrfs balance* program to restripe the extents across all pool devices, for example,
-to convert the pool from raid1 to raid0 or vice-versa.
+**Balansowanie** uruchamia program *btrfs balance*, który ponownie rozkłada ekstenty na wszystkie urządzenia puli, na przykład
+w celu przekształcenia puli z raid1 na raid0 lub odwrotnie.
 
-When a *full balance* is performed, it basically rewrites everything in the current filesystem.
+Podczas *pełnego balansowania* przepisywana jest w praktyce cała zawartość bieżącego systemu plików.
 
-A *mode conversion* affects the btrfs data extents; metadata always uses raid1 and is converted to raid1 if necessary by any balance operation.
+*Konwersja trybu* dotyczy ekstentów danych btrfs; metadane zawsze korzystają z raid1 i w razie potrzeby są do raid1 konwertowane przez dowolną operację balansowania.
 
-The run time is potentially very long, depending on the filesystem size and speed of the device.
+Czas wykonania bywa bardzo długi — zależy od rozmiaru systemu plików i szybkości urządzenia.
 
-Unraid uses these default options when creating a multiple-device pool:
+Przy tworzeniu puli z wieloma urządzeniami Unraid używa następujących opcji domyślnych:
 
 `-dconvert=raid1 -mconvert=raid1`
 
-For more complete documentation, please refer to the btrfs-balance [Manpage](https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs-balance)
+Pełniejszą dokumentację zawiera [Manpage](https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs-balance) programu btrfs-balance
 
-*Note: raid5 and raid6 are generally still considered **experimental** by the Linux community*
+*Uwaga: społeczność Linuksa wciąż uznaje raid5 i raid6 za **eksperymentalne** rozwiązania*
 :end
 
 :info_balance_cancel_help:
@@ -276,15 +276,15 @@ Gdy zaznaczono *Napraw uszkodzone bloki*, *btrfs scrub* naprawi uszkodzone bloki
 :end
 
 :info_btrfs_check_help:
-**Check** will run the *btrfs check* program to check file system integrity on the device.
+**Sprawdź** uruchamia program *btrfs check*, który bada spójność systemu plików na urządzeniu.
 
-The *Options* field is initialized with *--readonly* which specifies check-only.  If repair is needed, you should run
-a second Check pass, setting the *Options* to *--repair*; this will permit *btrfs check* to fix the file system.
+Pole *Opcje* jest wstępnie wypełnione wartością *--readonly*, oznaczającą wyłącznie sprawdzenie.  Jeśli potrzebna jest naprawa, należy uruchomić
+drugie sprawdzenie z polem *Opcje* ustawionym na *--repair*; pozwoli to programowi *btrfs check* naprawić system plików.
 
-After starting a Check, you should Refresh to monitor progress and status.  Depending on
-how large the file system is, and what errors might be present, the operation can take **a long time** to finish (hours).
-Not much info is printed in the window, but you can verify the operation is running by observing the read/write counters
-increasing for the device on the Main page.
+Po rozpoczęciu sprawdzania warto użyć Odśwież, aby śledzić postęp i stan.  Zależnie od
+rozmiaru systemu plików i rodzaju napotkanych błędów operacja może trwać **bardzo długo** (godziny).
+W oknie pojawia się niewiele informacji, ale postęp operacji można potwierdzić, obserwując rosnące liczniki
+odczytu i zapisu dla urządzenia na stronie Główna.
 :end
 
 :info_check_cancel_help:
@@ -292,16 +292,16 @@ increasing for the device on the Main page.
 :end
 
 :info_reiserfs_check_help:
-**Check** will run the *reiserfsck* program to check file system integrity on the device.
+**Sprawdź** uruchamia program *reiserfsck*, który bada spójność systemu plików na urządzeniu.
 
-The *Options* field may be filled in with specific options used to fix problems in the file system. Typically, you
-first run a Check pass leaving *Options* blank.  Upon completion, if *reiserfsck* finds any problems, you must
-run a second Check pass, using a specific option as instructed by the first *reiserfsck* pass.
+Pole *Opcje* można wypełnić konkretnymi opcjami służącymi do usunięcia problemów w systemie plików. Zwykle
+pierwsze sprawdzenie wykonuje się z pustym polem *Opcje*.  Jeśli po jego zakończeniu *reiserfsck* wykryje jakiekolwiek problemy, trzeba
+uruchomić drugie sprawdzenie z konkretną opcją wskazaną przez pierwszy przebieg *reiserfsck*.
 
-After starting a Check you should Refresh to monitor progress and status.  Depending on
-how large the file system is, and what errors might be present, the operation can take **a long time** to finish (hours).
-Not much info is printed in the window, but you can verify the operation is running by observing the read/write counters
-increasing for the device on the Main page.
+Po rozpoczęciu sprawdzania warto użyć Odśwież, aby śledzić postęp i stan.  Zależnie od
+rozmiaru systemu plików i rodzaju napotkanych błędów operacja może trwać **bardzo długo** (godziny).
+W oknie pojawia się niewiele informacji, ale postęp operacji można potwierdzić, obserwując rosnące liczniki
+odczytu i zapisu dla urządzenia na stronie Główna.
 :end
 
 :info_reiserfs_cancel_help:
@@ -309,15 +309,15 @@ increasing for the device on the Main page.
 :end
 
 :info_xfs_check_help:
-**Check** will run the *xfs_repair* program to check file system integrity on the device.
+**Sprawdź** uruchamia program *xfs_repair*, który bada spójność systemu plików na urządzeniu.
 
-The *Options* field is initialized with *-n* which specifies check-only.  If repair is needed, you should run
-a second Check pass, setting the *Options* blank; this will permit *xfs_repair* to fix the file system.
+Pole *Opcje* jest wstępnie wypełnione wartością *-n*, oznaczającą wyłącznie sprawdzenie.  Jeśli potrzebna jest naprawa, należy uruchomić
+drugie sprawdzenie z pustym polem *Opcje*; pozwoli to programowi *xfs_repair* naprawić system plików.
 
-After starting a Check, you should Refresh to monitor progress and status.  Depending on
-how large the file system is, and what errors might be present, the operation can take **a long time** to finish (hours).
-Not much info is printed in the window, but you can verify the operation is running by observing the read/write counters
-increasing for the device on the Main page.
+Po rozpoczęciu sprawdzania warto użyć Odśwież, aby śledzić postęp i stan.  Zależnie od
+rozmiaru systemu plików i rodzaju napotkanych błędów operacja może trwać **bardzo długo** (godziny).
+W oknie pojawia się niewiele informacji, ale postęp operacji można potwierdzić, obserwując rosnące liczniki
+odczytu i zapisu dla urządzenia na stronie Główna.
 :end
 
 :info_xfs_cancel_help:
@@ -344,22 +344,22 @@ Każdy dysk może mieć własne ustawienie nadrzędne wobec ustawienia „domyś
 :end
 
 :info_attribute_notifications_help:
-The user can enable or disable notifications for the given SMART attributes. It is recommended to keep the default, which is ALL selected attributes,
-when certain attributes are not present on your hard disk or do not provide the correct information, these may be excluded.
-In addition custom SMART attributes can be entered to generate notifications. Be careful in this selection,
-it may cause an avalance of notifcations if inappropriate SMART attributes are chosen.
+Powiadomienia dla poszczególnych atrybutów SMART można włączać i wyłączać. Zalecane jest pozostawienie ustawienia domyślnego, czyli WSZYSTKICH zaznaczonych atrybutów;
+atrybuty, których dany dysk twardy nie udostępnia albo które podają nieprawidłowe informacje, można wykluczyć.
+Dodatkowo można wpisać własne atrybuty SMART, dla których mają powstawać powiadomienia. Wyboru należy dokonywać ostrożnie,
+bo niewłaściwie dobrane atrybuty SMART mogą wywołać lawinę powiadomień.
 
-Each disk may have its own specific setting overruling the 'default' setting (see global SMART settings under Disk Settings).
+Każdy dysk może mieć własne ustawienie, nadrzędne wobec ustawienia „domyślnego” (patrz globalne ustawienia SMART w Ustawieniach Dysku).
 :end
 
 :selftest_history_help:
-Press **Show** to view the self-test history as is kept on the disk itself.
-This feature is only available when the disk is in active mode.
+Naciśnięcie **Pokaż** wyświetla historię autotestów przechowywaną na samym dysku.
+Funkcja jest dostępna tylko wtedy, gdy dysk pracuje w trybie aktywnym.
 :end
 
 :selftest_error_log_help:
-Press **Show** to view the error report as is kept on the disk itself.
-This feature is only available when the disk is in active mode.
+Naciśnięcie **Pokaż** wyświetla raport błędów przechowywany na samym dysku.
+Funkcja jest dostępna tylko wtedy, gdy dysk pracuje w trybie aktywnym.
 :end
 
 :selftest_short_test_help:
