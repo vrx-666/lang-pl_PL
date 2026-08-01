@@ -515,119 +515,118 @@ Cokolwiek, do 256 znaków.
 :end
 
 :share_edit_allocation_method_help:
-This setting determines how Unraid OS will choose which disk to use when creating a new file or directory:
+To ustawienie decyduje, który dysk Unraid OS wybierze przy tworzeniu nowego pliku lub katalogu:
 
-**High-water**
-Choose the lowest numbered disk with free space still above the current *high water mark*.  The
-*high water mark* is initialized with the size of the largest data disk divided by 2.  If no disk
-has free space above the current *high water mark*, divide the *high water mark* by 2 and choose again.
+**Wysoka woda**
+Wybierany jest dysk o najniższym numerze, którego wolne miejsce nadal przekracza bieżący *znak wysokiej wody*.  *Znak
+wysokiej wody* jest początkowo równy rozmiarowi największego dysku danych podzielonemu przez 2.  Jeśli żaden dysk
+nie ma wolnego miejsca powyżej bieżącego *znaku wysokiej wody*, *znak wysokiej wody* jest dzielony przez 2 i wybór następuje ponownie.
 
-The goal of **High-water** is to write as much data as possible to each disk (in order to minimize
-how often disks need to be spun up), while at the same time, try to keep the same amount of free space on
-each disk (in order to distribute data evenly across the array).
+Celem trybu **Wysoka woda** jest zapisanie na każdym dysku możliwie dużej ilości danych (aby ograniczyć,
+jak często dyski trzeba wybudzać), przy jednoczesnym utrzymaniu na każdym dysku podobnej ilości wolnego miejsca
+(aby dane rozkładały się równomiernie w macierzy).
 
-**Fill-up**
-Choose the lowest numbered disk that still has free space above the current **Minimum free space**
-setting.
+**Wypełnij**
+Wybierany jest dysk o najniższym numerze, którego wolne miejsce nadal przekracza bieżące ustawienie **Minimalna wolna przestrzeń**.
 
-**Most-free**
-Choose the disk that currently has the most free space.
+**Najwięcej wolnego miejsca**
+Wybierany jest dysk, który ma w danej chwili najwięcej wolnego miejsca.
 :end
 
 :share_edit_free_space_help:
-The *minimum free space* available to allow writing to any disk belonging to the share.<br>
+*Minimalna wolna przestrzeń* wymagana, aby dopuścić zapis na dowolny dysk należący do udziału.<br>
 
-Choose a value which is equal or greater than the biggest single file size you intend to copy to the share.
-Include units KB, MB, GB and TB as appropriate, e.g. 10MB.
+Należy wybrać wartość równą największemu pojedynczemu plikowi, jaki ma być kopiowany do udziału, lub od niego większą.
+Trzeba podać odpowiednią jednostkę: KB, MB, GB lub TB, na przykład 10MB.
 :end
 
 :share_edit_split_level_help:
-Determines whether a directory is allowed to expand onto multiple disks.
+Określa, czy katalog może rozrastać się na wiele dysków.
 
-**Automatically split any directory as required**
-When a new file or subdirectory needs to be created in a share, Unraid OS first chooses which disk
-it should be created on, according to the configured *Allocation method*.  If the parent directory containing
-the new file or subdirectory does not exist on this disk, then Unraid OS will first create all necessary
-parent directories, and then create the new file or subdirectory.
+**Automatycznie dziel katalogi w razie potrzeby**
+Gdy w udziale trzeba utworzyć nowy plik lub podkatalog, Unraid OS najpierw wybiera dysk,
+na którym ma on powstać, zgodnie ze skonfigurowaną *Metodą alokacji*.  Jeśli katalog nadrzędny zawierający
+nowy plik lub podkatalog nie istnieje na tym dysku, Unraid OS utworzy najpierw wszystkie potrzebne
+katalogi nadrzędne, a dopiero potem nowy plik lub podkatalog.
 
-**Automatically split only the top level directory as required**
-When a new file or subdirectory is being created in the first level subdirectory of a share, if that first
-level subdirectory does not exist on the disk being written, then the subdirectory will be created first.
-If a new file or subdirectory is being created in the second or lower level subdirectory of a share, the new
-file or subdirectory is created on the same disk as the new file or subdirectory's parent directory.
+**Automatycznie dziel tylko katalog główny w razie potrzeby**
+Gdy nowy plik lub podkatalog powstaje w podkatalogu pierwszego poziomu udziału, a ten podkatalog
+pierwszego poziomu nie istnieje na dysku, na który następuje zapis, podkatalog zostanie utworzony jako pierwszy.
+Gdy nowy plik lub podkatalog powstaje w podkatalogu drugiego lub niższego poziomu udziału, nowy
+plik lub podkatalog tworzony jest na tym samym dysku, na którym znajduje się jego katalog nadrzędny.
 
-**Automatically split only the top "N" level directories as required**
-Similar to previous: when a new file or subdirectory is being created, if the parent directory is at level "N",
-and does not exist on the chosen disk, Unraid OS will first create all necessary parent directories.  If the
-parent directory of the new file or subdirectory is beyond level "N", then the new file or subdirectory is
-created on the same disk where the parent directory exists.
+**Automatycznie dziel tylko pierwsze „N" poziomów katalogów w razie potrzeby**
+Podobnie jak wyżej: gdy powstaje nowy plik lub podkatalog, a jego katalog nadrzędny jest na poziomie „N"
+i nie istnieje na wybranym dysku, Unraid OS utworzy najpierw wszystkie potrzebne katalogi nadrzędne.  Jeśli
+katalog nadrzędny nowego pliku lub podkatalogu leży poniżej poziomu „N", nowy plik lub podkatalog powstaje
+na tym samym dysku, na którym istnieje katalog nadrzędny.
 
-**Manual: do not automatically split directories**
-When a new file or subdirectory needs to be created in a share, Unraid OS will only consider disks where the
-parent directory already exists.
+**Ręcznie: nie dziel katalogów automatycznie**
+Gdy w udziale trzeba utworzyć nowy plik lub podkatalog, Unraid OS weźmie pod uwagę wyłącznie dyski, na których
+katalog nadrzędny już istnieje.
 :end
 
 :share_edit_included_disks_help:
-Specify the disks which can be used by the share. By default all disks are included; that is, if specific
-disks are not selected here, then the share may expand into *all* array disks.
+Określa dyski, z których udział może korzystać. Domyślnie uwzględnione są wszystkie dyski; oznacza to, że jeśli nie wybrano tu
+konkretnych dysków, udział może rozrastać się na *wszystkie* dyski macierzy.
 :end
 
 :share_edit_excluded_disks_help:
-Specify the disks which can *not* be used by the share. By default no disks are excluded.
+Określa dyski, z których udział korzystać *nie* może. Domyślnie żaden dysk nie jest wykluczony.
 :end
 
 :share_edit_cache_pool_help:
-Specify whether new files and directories written on the share can be written onto the Cache disk/pool if present.
-This setting also affects *mover* behavior.
+Określa, czy nowe pliki i katalogi zapisywane w udziale mogą trafiać na dysk lub pulę Cache, o ile taka istnieje.
+To ustawienie wpływa również na zachowanie *movera*.
 
-**No** prohibits new files and subdirectories from being written onto the Cache disk/pool.
-*Mover* will take no action so any existing files for this share that are on the cache are left there.
+**Nie** zabrania zapisywania nowych plików i podkatalogów na dysku lub puli Cache.
+*Mover* nie podejmie żadnego działania, więc istniejące pliki tego udziału, które są na cache, pozostaną tam.
 
-**Yes** indicates that all new files and subdirectories should be written to the Cache disk/pool, provided
-enough free space exists on the Cache disk/pool.
-If there is insufficient space on the Cache disk/pool, then new files and directories are created on the array.
-When the *mover* is invoked, files and subdirectories are transferred off the Cache disk/pool and onto the array.
+**Tak** oznacza, że wszystkie nowe pliki i podkatalogi mają być zapisywane na dysku lub puli Cache, o ile
+jest na nich wystarczająco dużo wolnego miejsca.
+Gdy miejsca na dysku lub puli Cache zabraknie, nowe pliki i katalogi powstają w macierzy.
+Po uruchomieniu *movera* pliki i podkatalogi są przenoszone z dysku lub puli Cache do macierzy.
 
-**Only** indicates that all new files and subdirectories must be written to the Cache disk/pool.
-If there is insufficient free space on the Cache disk/pool, *create* operations will fail with *out of space* status.
-*Mover* will take no action so any existing files for this share that are on the array are left there.
+**Tylko** oznacza, że wszystkie nowe pliki i podkatalogi muszą być zapisywane na dysku lub puli Cache.
+Gdy zabraknie tam wolnego miejsca, operacje *tworzenia* zakończą się stanem *brak miejsca*.
+*Mover* nie podejmie żadnego działania, więc istniejące pliki tego udziału, które są w macierzy, pozostaną tam.
 
-**Prefer** indicates that all new files and subdirectories should be written to the Cache disk/pool, provided
-enough free space exists on the Cache disk/pool.
-If there is insufficient space on the Cache disk/pool, then new files and directories are created on the array.
-When the *mover* is invoked, files and subdirectories are transferred off the array and onto the Cache disk/pool.
+**Preferuj** oznacza, że wszystkie nowe pliki i podkatalogi powinny być zapisywane na dysku lub puli Cache, o ile
+jest na nich wystarczająco dużo wolnego miejsca.
+Gdy miejsca na dysku lub puli Cache zabraknie, nowe pliki i katalogi powstają w macierzy.
+Po uruchomieniu *movera* pliki i podkatalogi są przenoszone z macierzy na dysk lub pulę Cache.
 
-**NOTE:** Mover will never move any files that are currently in use.
-This means if you want to move files associated with system services such as Docker or VMs then you need to
-disable these services while mover is running.
+**UWAGA:** Mover nigdy nie przenosi plików, które są aktualnie używane.
+Oznacza to, że aby przenieść pliki powiązane z usługami systemowymi, takimi jak Docker czy maszyny wirtualne, trzeba
+te usługi wyłączyć na czas pracy movera.
 :end
 
 :share_edit_copy_on_write_help:
-Set to **No** to cause the *btrfs* NOCOW (No Copy-on-Write) attribute to be set on the share directory
-when created on a device formatted with *btrfs* file system.  Once set, newly created files and
-subdirectories on the device will inherit the NOCOW attribute.  We recommend this setting for shares
-used to store vdisk images, including the Docker loopback image file.  This setting has no effect
-on non-btrfs file systems.
+Ustawienie **Nie** powoduje nadanie katalogowi udziału atrybutu NOCOW (bez kopiowania przy zapisie) systemu *btrfs*
+w chwili tworzenia go na urządzeniu sformatowanym w systemie plików *btrfs*.  Po jego nadaniu nowo tworzone pliki
+i podkatalogi na tym urządzeniu dziedziczą atrybut NOCOW.  Zalecamy to ustawienie dla udziałów
+przechowujących obrazy dysków wirtualnych, w tym plik obrazu loopback Dockera.  Ustawienie nie ma wpływu
+na systemy plików inne niż btrfs.
 
-Set to **Auto** for normal operation, meaning COW **will** be in effect on devices formatted with *btrfs*.
+Ustawienie **Auto** oznacza normalną pracę, czyli COW **będzie** działać na urządzeniach sformatowanych w systemie *btrfs*.
 :end
 
 :share_edit_status_help:
-Share does *not* contain any data and may be deleted if not needed any longer.
+Udział *nie* zawiera żadnych danych i można go usunąć, jeśli nie jest już potrzebny.
 :end
 
 :share_edit_delete_help:
-Share can *not* be deleted as long as it contains data. Be aware that some data can be hidden. See also [SMB Settings](/Settings/SMB) -> Hide "dot" files.
+Udziału *nie* można usunąć, dopóki zawiera dane. Warto pamiętać, że część danych może być ukryta. Zobacz również [Ustawienia SMB](/Settings/SMB) -> Ukryj pliki „z kropką".
 :end
 
 :smb_security_help:
-*Read settings from* is used to preset the SMB security settings of the current selected share with the settings of an existing share.
+*Wczytaj ustawienia z* służy do wstępnego wypełnienia ustawień zabezpieczeń SMB aktualnie wybranego udziału ustawieniami udziału już istniejącego.
 
-Select the desired share name and press **Read** to copy the SMB security settings from the selected source.
+Należy wybrać nazwę żądanego udziału i nacisnąć **Odczyt**, aby skopiować ustawienia zabezpieczeń SMB z wybranego źródła.
 
-*Write settings to* is used to copy the SMB security settings of the current selected share to one or more other existing shares.
+*Użyj tych ustawień dla* służy do skopiowania ustawień zabezpieczeń SMB aktualnie wybranego udziału do jednego lub kilku innych, istniejących udziałów.
 
-Select the desired destinations and press **Write** to copy the SMB security settings to the selected shares.
+Należy wybrać żądane miejsca docelowe i nacisnąć **Zapis**, aby skopiować ustawienia zabezpieczeń SMB do wybranych udziałów.
 :end
 
 :smb_export_help:
