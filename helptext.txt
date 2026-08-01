@@ -897,66 +897,66 @@ Wartość zero wyłącza próg ostrzegawczy (wraz z powiadomieniami).
 :end
 
 :disk_default_critical_utilization_help:
-*Critical disk utilization* sets the default critical threshold for all hard disks utilization. Exceeding this threshold will result in an alert notification.
+*Krytyczne wykorzystanie dysku* ustawia domyślny próg krytyczny dla wykorzystania wszystkich dysków twardych. Przekroczenie tego progu skutkuje powiadomieniem alarmowym.
 
-A value of zero will disable the critical threshold (including notifications).
+Wartość zero wyłącza próg krytyczny (wraz z powiadomieniami).
 :end
 
 :disk_default_warning_temperature_help:
-*Warning disk temperature* sets the default warning threshold for all hard disks temperature. Exceeding this threshold will result in a warning notification.
+*Ostrzegawcza temperatura dysku* ustawia domyślny próg ostrzegawczy dla temperatury wszystkich dysków twardych. Przekroczenie tego progu skutkuje powiadomieniem ostrzegawczym.
 
-A value of zero will disable the warning threshold (including notifications).
+Wartość zero wyłącza próg ostrzegawczy (wraz z powiadomieniami).
 :end
 
 :disk_default_critical_temperature_help:
-*Critical disk temperature* sets the default critical threshold for all hard disks temperature. Exceeding this threshold will result in an alert notification.
+*Krytyczna temperatura dysku* ustawia domyślny próg krytyczny dla temperatury wszystkich dysków twardych. Przekroczenie tego progu skutkuje powiadomieniem alarmowym.
 
-A value of zero will disable the critical threshold (including notifications).
+Wartość zero wyłącza próg krytyczny (wraz z powiadomieniami).
 :end
 
 :disk_default_smart_notification_help:
-SMART notifications are generated on either an increasing RAW value of the attribute, or a decreasing NORMALIZED value which reaches a predefined threshold set by the manufacturer.
+Powiadomienia SMART powstają przy rosnącej wartości SUROWEJ atrybutu albo przy malejącej wartości ZNORMALIZOWANEJ, która osiąga próg zdefiniowany przez producenta.
 
-This section is used to set the global settings for all disks. It is possible to adjust settings for individual disks.
+Ta sekcja służy do ustawień globalnych dla wszystkich dysków. Ustawienia poszczególnych dysków można zmienić osobno.
 :end
 
 :disk_default_smart_tolerance_help:
-A tolerance level may be given to prevent that small changes result in a notification. Setting a too high tolerance level may result in critical changes without a notification.
+Można zadać poziom tolerancji, aby drobne zmiany nie powodowały powiadomień. Zbyt wysoki poziom tolerancji może sprawić, że zmiany krytyczne przejdą bez powiadomienia.
 
-This section is used to set the global settings for all disks. It is possible to adjust settings for individual disks.
+Ta sekcja służy do ustawień globalnych dla wszystkich dysków. Ustawienia poszczególnych dysków można zmienić osobno.
 :end
 
 :disk_default_smart_controller_help:
-By default automatic controller selection is done by smartctl to read the SMART information. Certain controllers however need specific settings for smartctl to work.
-Use this setting to select your controller type and fill-in the specific disk index and device name for your situation. Use the manufacturer's documentation to find the relevant information.
+Domyślnie kontroler do odczytu informacji SMART wybiera automatycznie program smartctl. Niektóre kontrolery wymagają jednak konkretnych ustawień, aby smartctl działał.
+To ustawienie służy do wskazania typu kontrolera oraz wpisania właściwego indeksu dysku i nazwy urządzenia. Potrzebne informacje znajdują się w dokumentacji producenta.
 
-This section is used to set the global settings for all disks. It is possible to adjust settings for individual disks.
+Ta sekcja służy do ustawień globalnych dla wszystkich dysków. Ustawienia poszczególnych dysków można zmienić osobno.
 :end
 
 :disk_default_smart_attribute_help:
-The user can enable or disable notifications for the given SMART attributes. It is recommended to keep the default, which is ALL selected attributes,
-when certain attributes are not present on your hard disk or do not provide the correct information, these may be excluded.
-In addition custom SMART attributes can be entered to generate notifications. Be careful in this selection,
-it may cause an avalance of notifcations if inappropriate SMART attributes are chosen.
+Powiadomienia dla poszczególnych atrybutów SMART można włączać i wyłączać. Zalecane jest pozostawienie ustawienia domyślnego, czyli WSZYSTKICH zaznaczonych atrybutów;
+atrybuty, których dany dysk twardy nie udostępnia albo które podają nieprawidłowe informacje, można wykluczyć.
+Dodatkowo można wpisać własne atrybuty SMART, dla których mają powstawać powiadomienia. Wyboru należy dokonywać ostrożnie,
+bo niewłaściwie dobrane atrybuty SMART mogą wywołać lawinę powiadomień.
 
-This section is used to set the global settings for all disks. It is possible to adjust settings for individual disks.
+Ta sekcja służy do ustawień globalnych dla wszystkich dysków. Ustawienia poszczególnych dysków można zmienić osobno.
 :end
 
 :docker_repositories_help:
-Use this field to add template repositories.
-Docker templates are used to facilitate the creation and re-creation of Docker containers.  Please setup one per line.
+To pole służy do dodawania repozytoriów szablonów.
+Szablony Dockera ułatwiają tworzenie i odtwarzanie kontenerów Dockera.  Każdy należy wpisać w osobnym wierszu.
 
-For a list of popular community-supported repositories, visit here: <a href="http://lime-technology.com/forum/index.php?topic=37958.0" target="_blank">http://lime-technology.com/forum/index.php?topic=37958.0</a>
+Lista popularnych repozytoriów wspieranych przez społeczność znajduje się tutaj: <a href="http://lime-technology.com/forum/index.php?topic=37958.0" target="_blank">http://lime-technology.com/forum/index.php?topic=37958.0</a>
 :end
 
 :docker_enable_help:
-Before you can start the Docker service for the first time, please specify an image file for Docker to install to.
+Przed pierwszym uruchomieniem usługi Docker trzeba wskazać plik obrazu, w którym Docker ma zostać zainstalowany.
 
-Once started, Docker will always automatically start after the array has been started.
+Po uruchomieniu Docker będzie już zawsze startował automatycznie po wystartowaniu macierzy.
 :end
 
 :docker_timeout_help:
-The time in seconds to allow a container to gracefully stop before forcing it to stop
+Czas w sekundach przeznaczony na łagodne zatrzymanie kontenera, zanim zatrzymanie zostanie wymuszone
 :end
 
 :docker_vdisk_type_help:
