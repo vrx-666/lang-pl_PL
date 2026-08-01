@@ -630,85 +630,85 @@ Należy wybrać żądane miejsca docelowe i nacisnąć **Zapis**, aby skopiować
 :end
 
 :smb_export_help:
-This setting determines whether the share is visible and/or accessible.  The 'Yes (hidden)' setting
-will *hide* the share from *browsing* but is still accessible if you know the share name.
+To ustawienie decyduje, czy udział jest widoczny i czy jest dostępny.  Ustawienie „Tak (ukryty)"
+*ukrywa* udział podczas *przeglądania*, ale udział pozostaje dostępny dla kogoś, kto zna jego nazwę.
 :end
 
 :smb_time_machine_volume_help:
-This limits the reported volume size, preventing Time Machine from using the entire real disk space
-for backup.  For example, setting this value to "1024" would limit the reported disk space to 1GB.
+Ogranicza to zgłaszany rozmiar woluminu i nie pozwala programowi Time Machine wykorzystać na kopie zapasowe
+całej rzeczywistej przestrzeni dysku.  Na przykład ustawienie wartości „1024" ograniczy zgłaszaną przestrzeń dysku do 1 GB.
 :end
 
 :smb_case_sensitive_names_help:
-Controls whether filenames are case-sensitive.
+Decyduje o tym, czy nazwy plików rozróżniają wielkość liter.
 
-The default setting of **auto** allows clients that support case sensitive filenames (Linux CIFSVFS)
-to tell the Samba server on a per-packet basis that they wish to access the file system in a case-sensitive manner (to support UNIX
-case sensitive semantics). No Windows system supports case-sensitive filenames so setting this option to **auto** is the same as
-setting it to No for them; however, the case of filenames passed by a Windows client will be preserved.  This setting can result
-in reduced performance with very large directories because Samba must do a filename search and match on passed names.
+Ustawienie domyślne **auto** pozwala klientom obsługującym nazwy plików z rozróżnianiem wielkości liter (Linux CIFSVFS)
+informować serwer Samby w każdym pakiecie z osobna, że chcą korzystać z systemu plików z rozróżnianiem wielkości liter (co odpowiada
+semantyce systemu UNIX). Żaden system Windows nie obsługuje nazw plików z rozróżnianiem wielkości liter, więc ustawienie **auto** działa dla nich tak samo,
+jak ustawienie Nie; wielkość liter w nazwach przekazywanych przez klienta Windows zostanie jednak zachowana.  Przy bardzo dużych katalogach ustawienie to
+może obniżyć wydajność, ponieważ Samba musi wyszukać nazwę pliku i dopasować ją do nazwy przekazanej.
 
-A setting of **Yes** means that files are created with the case that the client passes, and only accessible using this same case.
-This will speed very large directory access, but some Windows applications may not function properly with this setting.  For
-example, if "MyFile" is created but a Windows app attempts to open "MYFILE" (which is permitted in Windows), it will not be found.
+Ustawienie **Tak** oznacza, że pliki są tworzone z wielkością liter przekazaną przez klienta i dostępne wyłącznie przy użyciu tej samej wielkości liter.
+Przyspieszy to dostęp do bardzo dużych katalogów, ale niektóre aplikacje Windows mogą przy tym ustawieniu nie działać poprawnie.  Na
+przykład jeśli utworzono „MyFile", a aplikacja Windows spróbuje otworzyć „MYFILE" (co w systemie Windows jest dozwolone), plik nie zostanie znaleziony.
 
-A value of **Forced lower** is special: the case of all incoming client filenames, not just new filenames, will be set to lower-case.
-In other words, no matter what mixed case name is created on the Windows side, it will be stored and accessed in all lower-case.  This
-ensures all Windows apps will properly find any file regardless of case, but case will not be preserved in folder listings.
-Note this setting should only be configured for new shares.
+Wartość **Wymuś małe litery** jest szczególna: wielkość liter we wszystkich przychodzących nazwach plików od klienta, nie tylko w nowych nazwach, zostanie zmieniona na małe litery.
+Innymi słowy, niezależnie od tego, jaką mieszaną wielkością liter nazwa zostanie utworzona po stronie Windows, będzie przechowywana i udostępniana wyłącznie małymi literami.  Zapewnia to,
+że wszystkie aplikacje Windows odnajdą każdy plik niezależnie od wielkości liter, ale wielkość liter nie zostanie zachowana na listach katalogów.
+Ustawienie to należy stosować wyłącznie dla nowych udziałów.
 :end
 
 :smb_security_modes_help:
-Summary of security modes:
+Podsumowanie trybów zabezpieczeń:
 
-**Public** All users including guests have full read/write access.
+**Publiczny** Wszyscy użytkownicy, łącznie z gośćmi, mają pełny dostęp do odczytu i zapisu.
 
-**Secure** All users including guests have read access, you select which of your users have write access.
+**Zabezpieczony** Wszyscy użytkownicy, łącznie z gośćmi, mają dostęp do odczytu, a wybór użytkowników z dostępem do zapisu należy do administratora.
 
-**Private** No guest access at all, you select which of your users have read/write, read-only access or no access.
+**Prywatny** Brak dostępu dla gości, a wybór użytkowników z dostępem do odczytu i zapisu, tylko do odczytu albo bez dostępu należy do administratora.
 :end
 
 :smb_secure_access_help:
-*Read settings from* is used to preset the SMB User Access settings of the current selected share with the settings of an existing share.
+*Wczytaj ustawienia z* służy do wstępnego wypełnienia ustawień Poziomu dostępu SMB aktualnie wybranego udziału ustawieniami udziału już istniejącego.
 
-Select the desired share name and press **Read** to copy the SMB security settings from the selected source.
+Należy wybrać nazwę żądanego udziału i nacisnąć **Odczyt**, aby skopiować ustawienia zabezpieczeń SMB z wybranego źródła.
 
-*Write settings to* is used to copy the SMB User Access settings of the current share to one or more other existing shares.
+*Użyj tych ustawień dla* służy do skopiowania ustawień Poziomu dostępu SMB bieżącego udziału do jednego lub kilku innych, istniejących udziałów.
 
-Select the desired destinations and press **Write** to copy the SMB User access settings to the selected shares.
+Należy wybrać żądane miejsca docelowe i nacisnąć **Zapis**, aby skopiować ustawienia Poziomu dostępu SMB do wybranych udziałów.
 :end
 
 :smb_private_access_help:
-*Read settings from* is used to preset the SMB User Access settings of the current selected share with the settings of an existing share.
+*Wczytaj ustawienia z* służy do wstępnego wypełnienia ustawień Poziomu dostępu SMB aktualnie wybranego udziału ustawieniami udziału już istniejącego.
 
-Select the desired share name and press **Read** to copy the SMB security settings from the selected source.
+Należy wybrać nazwę żądanego udziału i nacisnąć **Odczyt**, aby skopiować ustawienia zabezpieczeń SMB z wybranego źródła.
 
-*Write settings to* is used to copy the SMB User Access settings of the current share to one or more other existing shares.
+*Użyj tych ustawień dla* służy do skopiowania ustawień Poziomu dostępu SMB bieżącego udziału do jednego lub kilku innych, istniejących udziałów.
 
-Select the desired destinations and press **Write** to copy the SMB User access settings to the selected shares.
+Należy wybrać żądane miejsca docelowe i nacisnąć **Zapis**, aby skopiować ustawienia Poziomu dostępu SMB do wybranych udziałów.
 :end
 
 :nfs_security_help:
-*Read settings from* is used to preset the NFS security settings of the current selected share with the settings of an existing share.
+*Wczytaj ustawienia z* służy do wstępnego wypełnienia ustawień zabezpieczeń NFS aktualnie wybranego udziału ustawieniami udziału już istniejącego.
 
-Select the desired share name and press **Read** to copy the NFS security settings from the selected source.
+Należy wybrać nazwę żądanego udziału i nacisnąć **Odczyt**, aby skopiować ustawienia zabezpieczeń NFS z wybranego źródła.
 
-*Write settings to* is used to copy the NFS security settings of the current selected share to one or more other existing shares.
+*Użyj tych ustawień dla* służy do skopiowania ustawień zabezpieczeń NFS aktualnie wybranego udziału do jednego lub kilku innych, istniejących udziałów.
 
-Select the desired destinations and press **Write** to copy the NFS security settings to the selected shares.
+Należy wybrać żądane miejsca docelowe i nacisnąć **Zapis**, aby skopiować ustawienia zabezpieczeń NFS do wybranych udziałów.
 :end
 
 :user_add_username_help:
-Usernames may be up to 40 characters long and must start with a **lower case letter** or an underscore,
-followed by **lower case letters**, digits, underscores, or dashes. They can end with a dollar sign.
+Nazwy użytkowników mogą mieć do 40 znaków i muszą zaczynać się od **małej litery** lub podkreślenia,
+po którym następują **małe litery**, cyfry, podkreślenia lub myślniki. Mogą kończyć się znakiem dolara.
 :end
 
 :user_add_description_help:
-Up to 64 characters. The characters ampersand (&amp;) quote (&quot;) and colon (:) are not allowed.
+Do 64 znaków. Znaki ampersand (&amp;), cudzysłów (&quot;) i dwukropek (:) są niedozwolone.
 :end
 
 :user_add_custom_image_help:
-The image will be scaled to 48x48 pixels in size. The maximum image file upload size is 95 kB (97,280 bytes).
+Obraz zostanie przeskalowany do rozmiaru 48x48 pikseli. Maksymalny rozmiar przesyłanego pliku obrazu to 95 kB (97 280 bajtów).
 :end
 
 :user_password_help:
