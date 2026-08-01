@@ -781,62 +781,62 @@ Jest to zapasowy serwer NTP, używany, gdy Serwer NTP 1 jest niedostępny.
 :end
 
 :ntp_server3_help:
-This is the alternate NTP Server to use if NTP Servers 1 and 2 are both down.
+Jest to zapasowy serwer NTP, używany, gdy Serwery NTP 1 i 2 są niedostępne.
 :end
 
 :ntp_server4_help:
-This is the alternate NTP Server to use if NTP Servers 1, 2, and 3 are all down.
+Jest to zapasowy serwer NTP, używany, gdy Serwery NTP 1, 2 i 3 są niedostępne.
 :end
 
 :current_time_help:
-Enter the current time-of-day.  Use format YYYY-MM-DD HH:MM:SS. Greyed out when using NTP.
+Należy podać bieżącą godzinę.  Obowiązuje format RRRR-MM-DD GG:MM:SS. Pole jest wyszarzone przy korzystaniu z NTP.
 :end
 
 :disk_enable_autostart_help:
-If set to 'Yes' then if the device configuration is correct upon server start-up,
-the array will be automatically Started and shares exported.<br>
-If set to 'No' then you must Start the array yourself.
+Ustawienie „Tak" sprawia, że przy prawidłowej konfiguracji urządzeń macierz zostanie po uruchomieniu serwera
+automatycznie wystartowana, a udziały wyeksportowane.<br>
+Ustawienie „Nie" oznacza, że macierz trzeba wystartować samodzielnie.
 :end
 
 :disk_spindown_delay_help:
-This setting defines the 'default' time-out for spinning hard drives down after a period
-of no I/O activity.  You may override the default value for an individual disk on the Disk Settings
-page for that disk.
+To ustawienie określa „domyślny" czas, po którym dyski twarde są usypiane po okresie
+bez operacji wejścia-wyjścia.  Wartość domyślną można zmienić dla pojedynczego dysku na stronie Ustawienia Dysku
+tego dysku.
 :end
 
 :disk_spinup_groups_help:
-If set to 'Yes' then the [Spinup Groups](/Help) feature is enabled.
+Ustawienie „Tak" włącza funkcję [Grupy wybudzania](/Help).
 :end
 
 :disk_default_partition_format_help:
-Defines the type of partition layout to create when formatting hard drives 2TB in size and
-smaller **only**. (All devices larger than 2TB are always set up with GPT partition tables.)
+Określa układ partycji tworzony podczas formatowania dysków twardych o rozmiarze **wyłącznie** 2 TB
+lub mniejszym. (Wszystkie urządzenia większe niż 2 TB zawsze otrzymują tablice partycji GPT.)
 
-**MBR: unaligned** setting will create MBR-style partition table, where the single
-partition 1 will start in the **63rd sector** from the start of the disk.  This is the *traditional*
-setting for virtually all MBR-style partition tables.
+Ustawienie **MBR: unaligned** tworzy tablicę partycji w stylu MBR, w której jedyna
+partycja 1 zaczyna się w **63. sektorze** od początku dysku.  Jest to ustawienie *tradycyjne*
+dla praktycznie wszystkich tablic partycji w stylu MBR.
 
-**MBR: 4K-aligned** setting will create an MBR-style partition table, where the single
-partition 1 will start in the **64th sector** from the start of the disk. Since the sector size is 512 bytes,
-this will *align* the start of partition 1 on a 4K-byte boundary.  This is required for proper
-support of so-called *Advanced Format* drives.
+Ustawienie **MBR: 4K-aligned** tworzy tablicę partycji w stylu MBR, w której jedyna
+partycja 1 zaczyna się w **64. sektorze** od początku dysku. Ponieważ rozmiar sektora wynosi 512 bajtów,
+początek partycji 1 zostanie *wyrównany* do granicy 4 kB.  Jest to wymagane do poprawnej
+obsługi dysków w tak zwanym formacie *Advanced Format*.
 
-Unless you have a specific requirement do not change this setting from the default **MBR: 4K-aligned**.
+Bez konkretnej potrzeby nie należy zmieniać tego ustawienia z domyślnego **MBR: 4K-aligned**.
 :end
 
 :disk_default_file_system_help:
-Defines the default file system type to create when an *unmountable* array device is formatted.
+Określa domyślny typ systemu plików tworzonego podczas formatowania *niemożliwego do zamontowania* urządzenia macierzy.
 
-The default file system type for a single or multi-device cache is always Btrfs.
+Domyślnym typem systemu plików dla cache z jednym lub wieloma urządzeniami jest zawsze Btrfs.
 :end
 
 :disk_shutdown_timeout_help:
-When shutting down the server, this defines how long to wait in seconds for *graceful* shutdown before forcing
-shutdown to continue.
+Określa, ile sekund podczas wyłączania serwera należy czekać na *łagodne* zamknięcie, zanim wyłączanie
+zostanie wymuszone.
 :end
 
 :disk_tunable_poll_attributes_help:
-This defines the disk SMART polling interval, in seconds.  A value of 0 disables SMART polling (not recommended).
+Określa odstęp między odpytaniami SMART dysku, w sekundach.  Wartość 0 wyłącza odpytywanie SMART (niezalecane).
 :end
 
 :disk_tunable_enable_ncq_help:
