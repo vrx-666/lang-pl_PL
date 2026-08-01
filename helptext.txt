@@ -1385,55 +1385,55 @@ Zaleca się użycie udziału znajdującego się na dysku cache, aby nie wybudza�
 :end
 
 :syslog_local_rotation_help:
-By default LOG rotation is disabled and will create a single LOG file of unlimited size.
+Domyślnie rotacja DZIENNIKA jest wyłączona i powstaje jeden plik DZIENNIKA o nieograniczonym rozmiarze.
 
-Enable LOG rotation to limit the size of the LOG file and specify the number of files to keep in the rotation scheme.
+Włączenie rotacji DZIENNIKA ogranicza rozmiar pliku DZIENNIKA i pozwala określić liczbę plików zachowywanych w schemacie rotacji.
 :end
 
 :syslog_local_file_size_help:
-Specifies the maximum LOG size. When exceeded LOG rotation will occur.
+Określa maksymalny rozmiar DZIENNIKA. Po jego przekroczeniu nastąpi rotacja DZIENNIKA.
 :end
 
 :syslog_local_file_number_help:
-Specifies the number of additional LOG files to keep in the rotation scheme.
+Określa liczbę dodatkowych plików DZIENNIKA zachowywanych w schemacie rotacji.
 :end
 
 :syslog_remote_server_help:
-Enter a name or IP address of a remote syslog server.
-This will send a copy of the syslog messages to the designated server.
+Należy podać nazwę lub adres IP zdalnego serwera syslog.
+Spowoduje to wysyłanie kopii komunikatów syslog na wskazany serwer.
 :end
 
 :syslog_mirror_flash_help:
-This setting is NO by default and must be used with care to avoid unnecessary wear and tear of the USB device.
+To ustawienie ma domyślnie wartość NIE i trzeba go używać ostrożnie, aby niepotrzebnie nie zużywać urządzenia USB.
 
-Change this setting to YES when troubleshooting is required and it is not possible to get the regular diagnostics information.
-A mirror of the syslog file is stored in the **logs** folder of the flash device.
+Wartość TAK należy ustawić wtedy, gdy konieczna jest diagnostyka, a nie da się uzyskać zwykłych informacji diagnostycznych.
+Kopia pliku syslog przechowywana jest w folderze **logs** na urządzeniu flash.
 :end
 
 :confirm_reboot_help:
-Choose if rebooting or powering down the server needs a confirmation checkbox.
+Wybór, czy ponowne uruchomienie albo wyłączenie serwera wymaga zaznaczenia pola potwierdzenia.
 :end
 
 :confirm_array_stop_help:
-Choose if stopping the array needs a confirmation checkbox.
+Wybór, czy zatrzymanie macierzy wymaga zaznaczenia pola potwierdzenia.
 :end
 
 :display_settings_help:
-The display settings below determine how items are displayed on screen. Use these settings to tweak the visual effects to your likings.
+Poniższe ustawienia wyświetlania decydują o tym, jak elementy są pokazywane na ekranie. Służą do dopasowania efektów wizualnych do własnych upodobań.
 
-You can experiment with these settings as desired, they only affect visual properties.
+Można z nimi swobodnie eksperymentować — wpływają wyłącznie na wygląd.
 :end
 
 :display_font_size_help:
-This is a per device setting
+Jest to ustawienie osobne dla każdego urządzenia
 :end
 
 :display_wwn_device_id_help:
-World Wide Name (WWN) is a unique identifier used for SAS attached devices.
+World Wide Name (WWN) to unikatowy identyfikator używany w urządzeniach podłączonych przez SAS.
 
-Select *Disabled* to suppress the appending of WWN to the device identification
+Wybranie *Wyłączone* pomija dołączanie WWN do identyfikacji urządzenia
 
-Select "Automatic" to append WWN to the device identification in case of SAS devices
+Wybranie „Automatycznie" dołącza WWN do identyfikacji urządzenia w przypadku urządzeń SAS
 :end
 
 :display_custom_text_color_help:
