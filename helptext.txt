@@ -1019,55 +1019,55 @@ Domyślnie jest to zabronione.
 :end
 
 :docker_user_defined_network_help:
-User created networks are networks created by the user outside of the GUI.<br>
-By default user created networks are removed from Docker. This is done to prevent potential conflicts with the automatic generation of custom networks.
+Sieci utworzone przez użytkownika to sieci utworzone poza interfejsem graficznym.<br>
+Domyślnie sieci utworzone przez użytkownika są usuwane z Dockera. Zapobiega to możliwym konfliktom z automatycznym tworzeniem sieci niestandardowych.
 
-Change this setting to preserve user defined networks, but it is the responsibility of the user to ensure these entries work correctly and are conflict free.
+Zmiana tego ustawienia pozwala zachować sieci zdefiniowane przez użytkownika, ale to na użytkowniku spoczywa odpowiedzialność za ich poprawne działanie i brak konfliktów.
 :end
 
 :docker_include_interface_vlan_ipv4_help:
-Include (default) or exclude the above interfaces or VLANs as custom network for Docker.
+Uwzględnia (domyślnie) lub wyklucza powyższe interfejsy lub sieci VLAN jako sieć niestandardową Dockera.
 
-Enter the pool range within each allocated subnet which is used for DHCPv4 assignments by Docker. E.g. 192.168.1.128/25
+Należy podać zakres puli w obrębie każdej przydzielonej podsieci, wykorzystywany przez Dockera do przydziałów DHCPv4. Na przykład 192.168.1.128/25
 :end
 
 :docker_exclude_interface_vlan_ipv4_help:
-Include or exclude (default) the above interfaces or VLANs as custom network for Docker.
+Uwzględnia lub wyklucza (domyślnie) powyższe interfejsy lub sieci VLAN jako sieć niestandardową Dockera.
 
-Enter the pool range within each allocated subnet which is used for DHCPv4 assignments by Docker. E.g. 192.168.1.128/25
+Należy podać zakres puli w obrębie każdej przydzielonej podsieci, wykorzystywany przez Dockera do przydziałów DHCPv4. Na przykład 192.168.1.128/25
 :end
 
 :docker_include_interface_vlan_ipv6_help:
-Include (default) or exclude the above interfaces or VLANs as custom network for Docker.
+Uwzględnia (domyślnie) lub wyklucza powyższe interfejsy lub sieci VLAN jako sieć niestandardową Dockera.
 
-Enter the pool range within each allocated subnet which is used for DHCPv6 assignments by Docker. E.g. 2a02:abcd:9ef5:100:1::/72
+Należy podać zakres puli w obrębie każdej przydzielonej podsieci, wykorzystywany przez Dockera do przydziałów DHCPv6. Na przykład 2a02:abcd:9ef5:100:1::/72
 :end
 
 :docker_exclude_interface_vlan_ipv6_help:
-Include or exclude (default) the above interfaces or VLANs as custom network for Docker.
+Uwzględnia lub wyklucza (domyślnie) powyższe interfejsy lub sieci VLAN jako sieć niestandardową Dockera.
 
-Enter the pool range within each allocated subnet which is used for DHCPv6 assignments by Docker. E.g. 2a02:abcd:9ef5:100:1::/72
+Należy podać zakres puli w obrębie każdej przydzielonej podsieci, wykorzystywany przez Dockera do przydziałów DHCPv6. Na przykład 2a02:abcd:9ef5:100:1::/72
 :end
 
 :docker_version_help:
-This is the active Docker version.
+Jest to aktywna wersja Dockera.
 :end
 
 :docker_vdisk_location_active_help:
-This is the location of the Docker image.
+Jest to lokalizacja obrazu Dockera.
 :end
 
 :docker_appdata_location_active_help:
-This is the storage location for Docker containers.
+Jest to miejsce przechowywania danych kontenerów Dockera.
 :end
 
 :docker_log_rotation_active_help:
-By default a single unlimited LOG file is created. Otherwise LOG file size and number of files are limited when LOG rotation is enabled.
+Domyślnie tworzony jest jeden plik DZIENNIKA o nieograniczonym rozmiarze. Po włączeniu rotacji DZIENNIKA rozmiar pliku i liczba plików są ograniczone.
 :end
 
 :docker_custom_network_active_help:
-Allows direct communication between the host and containers using a custom (macvlan) network.<br>
-By default this is prohibited.
+Zezwala na bezpośrednią komunikację między gospodarzem a kontenerami korzystającymi z sieci niestandardowej (macvlan).<br>
+Domyślnie jest to zabronione.
 :end
 
 :docker_user_defined_network_active_help:
